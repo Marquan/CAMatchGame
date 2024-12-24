@@ -64,6 +64,9 @@ class GameFragment : Fragment() {
         }
     }
 
+    private var seconds = 0
+    private var isRunning = false
+
 
     fun startTheGame() {
         binding.apply {
@@ -87,7 +90,10 @@ class GameFragment : Fragment() {
                     flipCard(i)
                 }
             }
+            isRunning = true
         }
+        runTimer()
+        makeToast("Game Start!")
     }
 
 
@@ -151,6 +157,7 @@ class GameFragment : Fragment() {
                 matches = matches + 1
                 binding.matchCount.text = "Matches: ${matches}"
                 if (matches >= TestSettings.getImgLinks().size) {
+                    isRunning = false
                     makeToast("You Win!")
                 }
             } else {
@@ -186,6 +193,24 @@ class GameFragment : Fragment() {
         super.onPause()
         // Unregister the BroadcastReceiver
         getActivity()?.unregisterReceiver(recv2)
+    }
+
+
+    private fun runTimer() {
+        val timeShow = binding.timeShow
+
+
+        // Creates a new Handler
+        val handler = Handler()
+        handler.postDelayed(
+            {if (isRunning) {
+                seconds += 1
+                val minNo = seconds / 60
+                val secNo = seconds % 60
+                timeShow.setText("Time: ${"%02d".format(minNo)}:${"%02d".format(secNo)}")
+                runTimer()
+            }},
+            1000)
     }
 
 
