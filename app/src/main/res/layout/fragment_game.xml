@@ -127,6 +127,7 @@
                 android:text="Matches: 0"
                 />
             <TextView
+                android:id="@+id/time_show"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_width="0dp"
