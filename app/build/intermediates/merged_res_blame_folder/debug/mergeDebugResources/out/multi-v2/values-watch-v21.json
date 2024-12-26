@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "iss.nus.edu.sg.ca.matchgame.app-mergeDebugResources-30:/values-watch-v21/values-watch-v21.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\TheMarksman\\.gradle\\caches\\8.9\\transforms\\efd92f21ee58395b860a20a915e29c4d\\transformed\\appcompat-1.7.0\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "from": {
+                        "startLines": "2,6,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,271,499",
+                        "endLines": "5,9,13",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "266,494,724"
+                    }
+                }
+            ]
+        }
+    ]
+}
