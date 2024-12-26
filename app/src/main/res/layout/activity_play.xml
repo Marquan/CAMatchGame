@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.fragment.app.FragmentContainerView
+
+<LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:name="iss.nus.edu.sg.ca.matchgame.GameFragment"
-    tools:context=".PlayActivity" />
+    android:orientation="vertical"
+    android:id="@+id/main_play">
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/for_game"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:name="iss.nus.edu.sg.ca.matchgame.GameFragment"
+        tools:context=".PlayActivity" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/for_ads"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:name="iss.nus.edu.sg.ca.matchgame.AdFragment"
+        tools:context=".PlayActivity" />
+</LinearLayout>
