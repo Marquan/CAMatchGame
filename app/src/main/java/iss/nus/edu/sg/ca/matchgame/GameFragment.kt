@@ -68,9 +68,9 @@ class GameFragment : Fragment() {
     private var isRunning = false
 
 
-    fun startTheGame() {
+    fun fillButtonList() {
+        buttonList.clear()
         binding.apply {
-            Log.e("GameFragment","Starting the Game")
             buttonList.add(imgCard01)
             buttonList.add(imgCard02)
             buttonList.add(imgCard03)
@@ -83,6 +83,13 @@ class GameFragment : Fragment() {
             buttonList.add(imgCard10)
             buttonList.add(imgCard11)
             buttonList.add(imgCard12)
+        }
+    }
+
+
+    fun startTheGame() {
+        binding.apply {
+            Log.e("GameFragment","Starting the Game")
             for (i in 0..buttonList.size-1) {
                 isCleared.add(false)
                 val theButton = buttonList[i]
@@ -101,6 +108,7 @@ class GameFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         _binding = FragmentGameBinding.inflate(layoutInflater)
+        fillButtonList()
     }
 
 
