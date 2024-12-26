@@ -7,21 +7,23 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:paddingTop="60dp"
+    android:id="@+id/play_main"
     tools:context=".PlayActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/main"
+        android:id="@+id/for_game"
         android:name="iss.nus.edu.sg.ca.matchgame.GameFragment"
         android:layout_width="match_parent"
         android:layout_height="649dp"
+        android:layout_weight="20"
         tools:context=".PlayActivity" />
 
-<androidx.fragment.app.FragmentContainerView
-android:id="@+id/adFragmentContainer"
-android:layout_width="match_parent"
-android:layout_height="47dp"
-android:layout_gravity="bottom"
-android:layout_marginBottom="16dp"
-android:layout_weight="0" />
+    <androidx.fragment.app.FragmentContainerView
+    android:id="@+id/for_ad"
+    android:layout_width="match_parent"
+    android:layout_height="47dp"
+    android:layout_gravity="bottom"
+    android:layout_marginBottom="16dp"
+    android:layout_weight="1" />
 
-    </LinearLayout>
+</LinearLayout>
