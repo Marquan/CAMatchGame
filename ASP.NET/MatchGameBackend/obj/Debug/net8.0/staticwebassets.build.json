@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "amMzqLjIcflka37DgZEoc4peBDEGRvqmqW6kNFMHpRQ=",
+  "Source": "MatchGameBackend",
+  "BasePath": "_content/MatchGameBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
