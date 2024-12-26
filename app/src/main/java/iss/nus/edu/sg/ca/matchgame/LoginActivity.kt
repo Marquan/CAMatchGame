@@ -5,7 +5,6 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatActivity.MODE_PRIVATE
 import iss.nus.edu.sg.ca.matchgame.Constants.Constants
 import iss.nus.edu.sg.ca.matchgame.data.models.LoginRequest
 import iss.nus.edu.sg.ca.matchgame.databinding.ActivityLoginBinding
@@ -67,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
 //    }
 
     private fun startFetchActivity() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, PlayActivity::class.java)
         startActivity(intent)
     }
 

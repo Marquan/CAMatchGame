@@ -64,10 +64,13 @@ class GameFragment : Fragment() {
         }
     }
 
+    private var seconds = 0
+    private var isRunning = false
 
-    fun startTheGame() {
+
+    fun fillButtonList() {
+        buttonList.clear()
         binding.apply {
-            Log.e("GameFragment","Starting the Game")
             buttonList.add(imgCard01)
             buttonList.add(imgCard02)
             buttonList.add(imgCard03)
@@ -80,6 +83,13 @@ class GameFragment : Fragment() {
             buttonList.add(imgCard10)
             buttonList.add(imgCard11)
             buttonList.add(imgCard12)
+        }
+    }
+
+
+    fun startTheGame() {
+        binding.apply {
+            Log.e("GameFragment","Starting the Game")
             for (i in 0..buttonList.size-1) {
                 isCleared.add(false)
                 val theButton = buttonList[i]
@@ -87,7 +97,10 @@ class GameFragment : Fragment() {
                     flipCard(i)
                 }
             }
+            isRunning = true
         }
+        runTimer()
+        makeToast("Game Start!")
     }
 
 
@@ -95,6 +108,7 @@ class GameFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         _binding = FragmentGameBinding.inflate(layoutInflater)
+        fillButtonList()
     }
 
 
@@ -151,6 +165,7 @@ class GameFragment : Fragment() {
                 matches = matches + 1
                 binding.matchCount.text = "Matches: ${matches}"
                 if (matches >= TestSettings.getImgLinks().size) {
+                    isRunning = false
                     makeToast("You Win!")
                 }
             } else {
@@ -186,6 +201,24 @@ class GameFragment : Fragment() {
         super.onPause()
         // Unregister the BroadcastReceiver
         getActivity()?.unregisterReceiver(recv2)
+    }
+
+
+    private fun runTimer() {
+        val timeShow = binding.timeShow
+
+
+        // Creates a new Handler
+        val handler = Handler()
+        handler.postDelayed(
+            {if (isRunning) {
+                seconds += 1
+                val minNo = seconds / 60
+                val secNo = seconds % 60
+                timeShow.setText("Time: ${"%02d".format(minNo)}:${"%02d".format(secNo)}")
+                runTimer()
+            }},
+            1000)
     }
 
 
