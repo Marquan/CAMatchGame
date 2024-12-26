@@ -66,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
 //    }
 
     private fun startFetchActivity() {
-        val intent = Intent(this, GameActivity::class.java)
+        val intent = Intent(this, PlayActivity::class.java)
         startActivity(intent)
     }
 
