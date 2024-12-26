@@ -1,31 +1,39 @@
 package iss.nus.edu.sg.ca.matchgame
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import iss.nus.edu.sg.ca.matchgame.databinding.ActivityPlayBinding
+import com.google.android.gms.ads.MobileAds
 
 class PlayActivity : AppCompatActivity() {
-
-    private var _binding: ActivityPlayBinding? = null
-    private val binding get() = _binding!!
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        _binding = ActivityPlayBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main_play)) { v, insets ->
+        setContentView(R.layout.activity_play)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    }
 
+        // Initialize the AdMob SDK
+        MobileAds.initialize(this) { initializationStatus ->
+            Log.d("MainActivity", "AdMob SDK initialized: $initializationStatus")
+
+            // After initialization is complete, load the AdFragment
+            val adFragment =
+                supportFragmentManager.findFragmentByTag(AdFragment::class.java.simpleName)
+            if (adFragment == null) {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.adFragmentContainer, AdFragment())
+                    .commit()
+            }
+        }
+    }
 
     private fun makeToast(text: String) {
         val msg = Toast.makeText(
@@ -34,5 +42,4 @@ class PlayActivity : AppCompatActivity() {
         )
         msg.show()
     }
-
 }
