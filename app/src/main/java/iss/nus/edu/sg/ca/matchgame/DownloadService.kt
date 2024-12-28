@@ -15,8 +15,8 @@ import java.net.URL
 
 class DownloadService : Service() {
 
-    inner class LocalBinder : Binder() {
-        fun getService(): DownloadService {
+    inner class LocalBinder: Binder(){
+        fun getService(): DownloadService{
             return this@DownloadService
         }
     }
@@ -45,9 +45,8 @@ class DownloadService : Service() {
                 Log.e("Simulating", "Downloading: $i")
 
                 /*
-                //simulate long download to interrupt
+                //simulate long download
                 Thread.sleep(5000)
-
                  */
 
                 //parse as URL
@@ -70,7 +69,9 @@ class DownloadService : Service() {
                     Log.e("HTTP Response", "Image get successfully: $i")
                     //pass input stream of connection to show image
                     val inputStream: InputStream = conn.inputStream
+                    //decode image from URL into bitmap
                     val bitmap: Bitmap = BitmapFactory.decodeStream(inputStream)
+                    //add to list of image
                     tempImg.add(bitmap)
                 } else {
                     Log.e("HTTP Response", "Failed to connect to image URL: $i")
@@ -89,16 +90,24 @@ class DownloadService : Service() {
             }
 
         }
+        //return the 20 images
         return tempImg
     }
 
-    fun getHtml(urlString: String): MutableList<String> {
-        var imgUrl: MutableList<String> = mutableListOf()
+    fun getHtml(urlString: String):MutableList<String>{
+        //set up list for image urls
+        var imgUrl : MutableList<String> = mutableListOf()
+
+        //set up connection variable
         var conn: HttpURLConnection? = null
         try {
+            //get URL
             val url = URL(urlString)
+            //open up the connection
             conn = url.openConnection() as HttpURLConnection
+            //set request method to get
             conn.requestMethod = "GET"
+            //set user agent header to mozilla
             conn.setRequestProperty(
                 "User-Agent",
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
@@ -116,21 +125,48 @@ class DownloadService : Service() {
         return imgUrl;
     }
 
-    fun readFromServer(conn: HttpURLConnection): MutableList<String> {
-        val temp: MutableList<String> = mutableListOf()
+    //function to extract src from <img> tags
+    fun readFromServer(conn: HttpURLConnection): MutableList<String>{
+        val temp : MutableList<String> = mutableListOf()
 
+        //counter to keep track how many img URLs have been extracted
         var i = 0;
+
+        //set up buffered reader
         val inp = BufferedReader(InputStreamReader(conn.inputStream))
+
+        //regular expression to search for <img... src="...".../>
         val srcRegex = """<img\s+[^>]*src="([^"]+)"""".toRegex()
 
-        var line: String? = inp.readLine()
-        while (line != null && i < 20) {
-            if (line.contains("<img")) {
+        //read per line
+        var line : String? = inp.readLine()
+
+        //if 20 stop reading from server and return the URLs or there are lines left
+        while (line != null&&i<20) {
+            //if tag has <img> tag
+            if(line.contains("<img")){
+
+                //extract
+                //result would be groupValues[0] as the full thing, ie <img src="http...."/>
+                //then groupValues[1], groupValues[2] would be t
                 val matchResult = srcRegex.find(line)
-                if (matchResult != null) {
+
+                //if there is src inside
+                if(matchResult!=null){
                     val src = matchResult.groupValues[1]
-                    if (src.contains(".jpg") || src.contains(".png")) {
+
+                    // Extract the image source (src) attribute using the regular expression
+                    // The matchResult will capture the full tag as groupValues[0] (e.g., <img src="http..."/>)
+                    // and the actual URL in groupValues[1]
+                    if(src.contains(".jpg")||src.contains(".png")){
+                        //add to list of URL
                         temp.add(src)
+
+                        //broadcast to fetchActivity to update progress bar
+                        val intent = Intent()
+                        intent.setAction("Update")
+                        intent.putExtra("Counter",i+1)
+                        sendBroadcast(intent)
                         i++
                     }
                 }
@@ -139,7 +175,10 @@ class DownloadService : Service() {
             line = inp.readLine()
         }
 
+        //close input
         inp.close()
+
+        //return list of URLs
         return temp
     }
 }

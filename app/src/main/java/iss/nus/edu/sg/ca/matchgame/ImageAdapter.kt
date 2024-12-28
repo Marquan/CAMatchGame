@@ -26,4 +26,11 @@ class ImageAdapter(
         imageView.setImageBitmap(images[position])
         return _view
     }
+
+    //function to update image with given array of images
+    fun updateImages(newImages: MutableList<Bitmap>) {
+        images.clear()
+        images.addAll(newImages)
+        notifyDataSetChanged()
+    }
 }
