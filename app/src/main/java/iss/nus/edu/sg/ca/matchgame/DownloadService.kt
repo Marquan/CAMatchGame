@@ -2,126 +2,144 @@ package iss.nus.edu.sg.ca.matchgame
 
 import android.app.Service
 import android.content.Intent
-import android.os.Environment
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.os.Binder
 import android.os.IBinder
 import android.util.Log
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import java.io.File
-import java.io.FileOutputStream
+import java.io.BufferedReader
 import java.io.InputStream
+import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
-import java.util.UUID
-
 
 class DownloadService : Service() {
 
-    override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
-        val action = intent?.action
-        Log.e("DownloadService", "onStartCommand run ${action}")
-        if (intent.action.equals("download_file")) {
-            val url = intent.getStringExtra("url")
-            var nameNoExt = intent.getStringExtra("nameNoExt")
-            if (url != null) {
-                if (nameNoExt == null) {
-                    nameNoExt = ""
-                }
-                startImageDownload(url, nameNoExt)
-            }
+    inner class LocalBinder : Binder() {
+        fun getService(): DownloadService {
+            return this@DownloadService
         }
-
-        return super.onStartCommand(intent, flags, startId)
     }
 
-    protected fun startImageDownload(imgURL: String, nameNoExt: String = "") {
-        val ext = getFileExtension(imgURL)
-        val file = createDestFile(ext, nameNoExt)
-        Log.e("DownloadService","Save file created in ${file.absolutePath}")
+    val binder: IBinder = LocalBinder()
 
-        // creating and starting a background thread
-        Thread {
-            if (downloadImage(imgURL, file)) {
-                val intent = Intent()
-                intent.setAction("download_completed")
-                intent.putExtra("file_path", file.absolutePath)
-                Log.e("DownloadService","Download successful for ${file.absolutePath}")
-                sendBroadcast(intent)
+    override fun onBind(intent: Intent): IBinder {
+        return binder
+    }
+
+    //function to get image from given URL
+    //return a list of bitmap (images)
+    fun getImage(imgUrl: MutableList<String>): MutableList<Bitmap> {
+        val tempImg: MutableList<Bitmap> = mutableListOf()
+        //establish HttpURLConnection variable
+        var conn: HttpURLConnection? = null
+
+        for (i in imgUrl) {
+            try {
+                //check for thread interruption before starting the download
+                if (Thread.interrupted()) {
+                    Log.e("Thread", "Thread interrupted, stopping download.")
+                    return mutableListOf() //return empty list if interrupted
+                }
+
+                Log.e("Simulating", "Downloading: $i")
+
+                /*
+                //simulate long download to interrupt
+                Thread.sleep(5000)
+
+                 */
+
+                //parse as URL
+                val url = URL(i);
+
+                //open connection with HttpURLConnection
+                conn = url.openConnection() as HttpURLConnection
+
+                //Use get method
+                conn.requestMethod = "GET"
+
+                //set user-agent header as Mozilla
+                conn.setRequestProperty(
+                    "User-Agent",
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+                )
+
+                //if response HTTP.OK
+                if (conn.responseCode == HttpURLConnection.HTTP_OK) {
+                    Log.e("HTTP Response", "Image get successfully: $i")
+                    //pass input stream of connection to show image
+                    val inputStream: InputStream = conn.inputStream
+                    val bitmap: Bitmap = BitmapFactory.decodeStream(inputStream)
+                    tempImg.add(bitmap)
+                } else {
+                    Log.e("HTTP Response", "Failed to connect to image URL: $i")
+
+                }
+
+            } catch (e: InterruptedException) {
+                // Handle interruption properly
+                Log.e("Thread", "Thread was interrupted during sleep. Stopping download.")
+                return mutableListOf()
+            } catch (e: Exception) {
+                Log.e("HTTP Response", "Failed to connect to image URL: ${e.message}")
+            } finally {
+                //disconnect the connection
+                conn?.disconnect()
             }
-        }.start()
+
+        }
+        return tempImg
     }
 
-    private fun downloadImage(imgURL: String, file: File): Boolean {
-        var conn : HttpURLConnection? = null
-
+    fun getHtml(urlString: String): MutableList<String> {
+        var imgUrl: MutableList<String> = mutableListOf()
+        var conn: HttpURLConnection? = null
         try {
-            val url = URL(imgURL)
-
+            val url = URL(urlString)
             conn = url.openConnection() as HttpURLConnection
-            conn.setRequestProperty("User-Agent","Mozilla");
-            conn.requestMethod = "GET" // optional; default is GET
+            conn.requestMethod = "GET"
+            conn.setRequestProperty(
+                "User-Agent",
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+            )
 
             if (conn.responseCode == HttpURLConnection.HTTP_OK) {
-                Log.e("DownloadService","HTTP_OK. Starting output to ${file.absolutePath}.")
-                outputToFile(conn, file)
-            } else {
-                Log.e("DownloadService","responseCode is not HTTP_OK. Failed to start download for ${file.absolutePath}.")
+                // Read the response
+                imgUrl = readFromServer(conn)
             }
-
-            return true
         } catch (e: Exception) {
-            Log.e("DownloadService","Error when downloading ${file.absolutePath}.")
-            return false
+            Log.e("HTML response", "Error: ${e.message}", e)
         } finally {
             conn?.disconnect()
         }
+        return imgUrl;
     }
 
-    private fun outputToFile(conn: HttpURLConnection, file: File) {
-        val inp = conn.inputStream
-        val outp = FileOutputStream(file)
+    fun readFromServer(conn: HttpURLConnection): MutableList<String> {
+        val temp: MutableList<String> = mutableListOf()
 
-        // for storing incoming raw bytes from input-stream
-        val buf = ByteArray(4096)
+        var i = 0;
+        val inp = BufferedReader(InputStreamReader(conn.inputStream))
+        val srcRegex = """<img\s+[^>]*src="([^"]+)"""".toRegex()
 
-        // read in first 4096 bytes
-        var bytesRead = inp.read(buf)
+        var line: String? = inp.readLine()
+        while (line != null && i < 20) {
+            if (line.contains("<img")) {
+                val matchResult = srcRegex.find(line)
+                if (matchResult != null) {
+                    val src = matchResult.groupValues[1]
+                    if (src.contains(".jpg") || src.contains(".png")) {
+                        temp.add(src)
+                        i++
+                    }
+                }
 
-        while (bytesRead != -1) {   // -1 means no more bytes to read
-            // write to file the number of bytes read
-            outp.write(buf, 0, bytesRead)
-
-            // read from input-stream again
-            bytesRead = inp.read(buf)
+            }
+            line = inp.readLine()
         }
 
         inp.close()
-        outp.close()
+        return temp
     }
-
-    private fun getFileExtension(str: String) : String {
-        return str.substring(str.lastIndexOf("."))
-    }
-
-    private fun createDestFile(ext: String, nameNoExt: String = "") : File {
-        // using random string as filename to prevent filename clashes
-        var filename = nameNoExt
-        if (filename == "") {
-            filename = UUID.randomUUID().toString()
-        }
-        filename = filename + ext
-        //val filename = UUID.randomUUID().toString() + ext
-
-        // storing under /files/PICTURES folder
-        val dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-        return File(dir, filename)
-    }
-
-    override fun onBind(intent: Intent): IBinder? {
-        // TODO: Return the communication channel to the service.
-        throw UnsupportedOperationException("Not yet implemented")
-    }
-
 }
