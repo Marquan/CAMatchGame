@@ -93,6 +93,7 @@ class GameFragment : Fragment() {
             for (i in 0..buttonList.size-1) {
                 isCleared.add(false)
                 val theButton = buttonList[i]
+                theButton.setImageResource(R.drawable.closed_card)
                 theButton.setOnClickListener {
                     flipCard(i)
                 }
@@ -177,8 +178,11 @@ class GameFragment : Fragment() {
             } else {
                 val handler = Handler()
                 handler.postDelayed(
-                    {whichImage.setImageBitmap(null)
-                    buttonList[chose1].setImageBitmap(null)
+                    {
+                    //whichImage.setImageBitmap(null)
+                    //buttonList[chose1].setImageBitmap(null)
+                    whichImage.setImageResource(R.drawable.closed_card)
+                    buttonList[chose1].setImageResource(R.drawable.closed_card)
                     chose2 = -1
                     chose1 = -1
                     },
