@@ -52,7 +52,7 @@ class GameFragment : Fragment() {
                     Log.e("MyReceiver","Bitmap count: ${imgBitmaps.size}")
                     if (imgBitmaps.size >= TestSettings.getImgLinks().size) {
                         Log.e("MyReceiver","All ${TestSettings.getImgLinks().size} image(s) downloaded")
-                        startTheGame()
+                        afterFinishDownload()
                     }
                 //imageView.setImageBitmap(bitmap)
                 } else {
@@ -87,7 +87,7 @@ class GameFragment : Fragment() {
     }
 
 
-    fun startTheGame() {
+    fun afterFinishDownload() {
         binding.apply {
             Log.e("GameFragment","Starting the Game")
             for (i in 0..buttonList.size-1) {
@@ -117,6 +117,13 @@ class GameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        //downloadBeforeStart()
+
+        return binding.root
+    }
+
+
+    fun downloadBeforeStart() {
         for (i in 0..TestSettings.getImgLinks().size-1) {
             val url = TestSettings.getImgLink(i)
             val intent = Intent(getActivity(), DownloadService::class.java)
@@ -126,10 +133,7 @@ class GameFragment : Fragment() {
             Log.e("GameFragment","Starting download for ${i}: ${url}")
             getActivity()?.startService(intent)
         }
-
-        return binding.root
     }
-
     fun flipCard(index: Int) {
 
         if (isCleared[index]){
