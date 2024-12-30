@@ -85,6 +85,7 @@ class DownloadService : Service() {
                     val bitmap: Bitmap = BitmapFactory.decodeStream(inputStream)
                     //add to list of image
                     tempImg.add(bitmap)
+                    counter++
                 } else {
                     Log.e("HTTP Response", "Failed to connect to image URL: $i")
                 }
