@@ -34,6 +34,9 @@ class DownloadService : Service() {
         //establish HttpURLConnection variable
         var conn: HttpURLConnection? = null
 
+        //counter for downloaded image
+        var counter = 0;
+
         for (i in imgUrl) {
             try {
                 //check for thread interruption before starting the download
@@ -44,10 +47,9 @@ class DownloadService : Service() {
 
                 Log.e("Simulating", "Downloading: $i")
 
-                /*
-                //simulate long download
-                Thread.sleep(5000)
-                 */
+
+                //giving download a brief pause
+                Thread.sleep(500)
 
                 //parse as URL
                 val url = URL(i);
@@ -64,9 +66,19 @@ class DownloadService : Service() {
                     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
                 )
 
-                //if response HTTP.OK
+                //if image can be downloaded
                 if (conn.responseCode == HttpURLConnection.HTTP_OK) {
                     Log.e("HTTP Response", "Image get successfully: $i")
+
+                    //broadcast to the fetch activity to update progress bar and text
+
+                    val intent = Intent()
+                    intent.setAction("Update")
+                    intent.putExtra("Counter",counter+1)
+
+                    //send broadcast with intent and the current counter
+                    sendBroadcast(intent)
+
                     //pass input stream of connection to show image
                     val inputStream: InputStream = conn.inputStream
                     //decode image from URL into bitmap
@@ -75,11 +87,10 @@ class DownloadService : Service() {
                     tempImg.add(bitmap)
                 } else {
                     Log.e("HTTP Response", "Failed to connect to image URL: $i")
-
                 }
 
             } catch (e: InterruptedException) {
-                // Handle interruption properly
+                // Handle interruption properly, if interrupted return a null bitmap list
                 Log.e("Thread", "Thread was interrupted during sleep. Stopping download.")
                 return mutableListOf()
             } catch (e: Exception) {
@@ -103,18 +114,16 @@ class DownloadService : Service() {
         try {
             //get URL
             val url = URL(urlString)
-            //open up the connection
             conn = url.openConnection() as HttpURLConnection
-            //set request method to get
             conn.requestMethod = "GET"
-            //set user agent header to mozilla
             conn.setRequestProperty(
                 "User-Agent",
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
             )
 
             if (conn.responseCode == HttpURLConnection.HTTP_OK) {
-                // Read the response
+                // Read the HTML structure from URL
+                // And fetch the list of 20 image URLS
                 imgUrl = readFromServer(conn)
             }
         } catch (e: Exception) {
@@ -122,11 +131,13 @@ class DownloadService : Service() {
         } finally {
             conn?.disconnect()
         }
+        //return list of images url
         return imgUrl;
     }
 
     //function to extract src from <img> tags
     fun readFromServer(conn: HttpURLConnection): MutableList<String>{
+        //list to keep the images
         val temp : MutableList<String> = mutableListOf()
 
         //counter to keep track how many img URLs have been extracted
@@ -158,20 +169,17 @@ class DownloadService : Service() {
                     // Extract the image source (src) attribute using the regular expression
                     // The matchResult will capture the full tag as groupValues[0] (e.g., <img src="http..."/>)
                     // and the actual URL in groupValues[1]
-                    if(src.contains(".jpg")||src.contains(".png")){
+                    if(src.endsWith(".jpg")||src.endsWith(".png")){
                         //add to list of URL
                         temp.add(src)
 
-                        //broadcast to fetchActivity to update progress bar
-                        val intent = Intent()
-                        intent.setAction("Update")
-                        intent.putExtra("Counter",i+1)
-                        sendBroadcast(intent)
+                        //update counter
                         i++
                     }
                 }
 
             }
+            //read input
             line = inp.readLine()
         }
 

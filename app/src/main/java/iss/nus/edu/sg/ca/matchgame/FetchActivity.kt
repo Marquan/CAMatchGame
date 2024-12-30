@@ -13,7 +13,6 @@ import android.os.IBinder
 import android.util.Log
 import android.widget.Button
 import android.widget.GridView
-import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
@@ -21,9 +20,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import java.io.InputStream
-import java.net.HttpURLConnection
-import java.net.URL
+import java.io.ByteArrayOutputStream
 
 class FetchActivity : AppCompatActivity() {
     //save URL
@@ -34,6 +31,9 @@ class FetchActivity : AppCompatActivity() {
 
     //variable to store image bitmap that was read
     private var imageBitmap = mutableListOf<Bitmap>()
+
+    //list to check whether images are pressed or not
+    private var buttonStates = MutableList(20) { false } // Initially all unpressed
 
     //establish background thread
     private var bkgdThread:Thread? = null
@@ -69,7 +69,7 @@ class FetchActivity : AppCompatActivity() {
                 //update progress UI
                 runOnUiThread {
                     //get the progress counter from intent
-                    val counter = intent.getIntExtra("Counter", -1)
+                    val counter = intent.getIntExtra("Counter", 0)
                     val textUpdate = "Downloading ${counter}/20 images"
                     val updateText = findViewById<TextView>(R.id.progressText)
                     val progressBar = findViewById<ProgressBar>(R.id.progressBar)
@@ -141,24 +141,34 @@ class FetchActivity : AppCompatActivity() {
         }
 
         //set the card background as the placeholder image first
-        val adapter = ImageAdapter(this, placeholderImages)
+        //send the following data to the adapter
+        //populate the imageButton with placeholder image, set the buttonStates as all false, and set the imageButton to be disabled
+        val adapter = ImageAdapter(this, placeholderImages, buttonStates, false)
+
+        //load the placeholder cards
+        runOnUiThread {
+            gridView.adapter = adapter
+        }
 
         //set up download button click function
         downloadBtn.setOnClickListener{
 
-            //if download is already in progress return back to setOnClickLister
+            //if download is already in progress, interrupt thread to restart
             if (bkgdThread != null && bkgdThread!!.isAlive) {
-                Log.e("Thread", "A download is already in progress.")
-                return@setOnClickListener
+                Log.e("Thread", "Restarting...")
+                bkgdThread!!.interrupt()
+                bkgdThread = null
             }
-
-            //check if previous thread is stopped
-            bkgdThread?.join()
 
             //set background thread to process get image
             bkgdThread = Thread{
                 //reset the progress bar value to 0
                 progressBar.progress = 0
+
+                //make sure imageButton is disabled first
+                runOnUiThread{
+                    adapter.updateEnableButtons(false)
+                }
 
                 //if service is available
                 if (isBound==true && svc != null){
@@ -178,6 +188,9 @@ class FetchActivity : AppCompatActivity() {
                         runOnUiThread {
                             //update the card images using adapter
                             adapter.updateImages(imageBitmap)
+
+                            //enable the imageButtons to be clickable
+                            adapter.updateEnableButtons(true)
                         }
                     }
                     else{
@@ -193,7 +206,58 @@ class FetchActivity : AppCompatActivity() {
             bkgdThread?.start()
         }
 
+        //set up play button
+        val playBtn = findViewById<Button>(R.id.playBtn)
+        playBtn.setOnClickListener {
+            //check the number of cards that is chosen
+            val numOfCardChose = buttonStates.count { it }
 
+            if(numOfCardChose==6){
+                //convert the images to byteArray to be sent through intent
+                val byteArrayList = ArrayList<ByteArray>()
+                for (i in buttonStates.indices) {
+                    if(buttonStates[i]){
+                        val bitmap = imageBitmap[i]
+                        val byteArrayOutputStream = ByteArrayOutputStream()
+                        if(imagesUrl[i].contains(".png")){
+                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
+                        }
+                        else{
+                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream)
+                        }
+                        byteArrayList.add(byteArrayOutputStream.toByteArray())
+
+                    }
+                }
+
+                //TODO set up which activity to move next
+                //TODO selected images will be send through intent
+                /*
+                val playIntent = Intent(this, PlayActivity::class.java)
+                playIntent.putExtra("bitmaps",byteArrayList)
+                startActivity(playIntent)
+                */
+
+            }
+            else{
+                val msg = Toast.makeText(this, "Please choose only 6!", Toast.LENGTH_SHORT)
+                msg.show()
+            }
+        }
+
+    }
+
+    //function to toggle pressed/unpressed state for images
+    fun toggleButtonState(position: Int) {
+
+        //toggle the state
+        buttonStates[position] = !buttonStates[position]
+
+        //get grid view
+        val gridView = findViewById<GridView>(R.id.gridView)
+
+        //update grid view
+        (gridView.adapter as ImageAdapter).notifyDataSetChanged()
     }
 
     override fun onDestroy() {
