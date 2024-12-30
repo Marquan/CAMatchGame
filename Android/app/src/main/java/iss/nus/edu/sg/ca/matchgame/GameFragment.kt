@@ -170,7 +170,15 @@ class GameFragment : Fragment() {
                 binding.matchCount.text = "Matches: ${matches}"
                 if (matches >= TestSettings.getImgLinks().size) {
                     isRunning = false
-                    makeToast("You Win!")
+                    //makeToast("You Win!")
+                    //val intent = Intent()
+                    //intent.setAction("game_won")
+                    //intent.putExtra("time_taken",seconds)
+                    //intent.putExtra("match_attempts",matchAttempts)
+                    //intent.putExtra("matches",matches)
+                    //sendBroadcast(intent)
+                    val thePlayActivity = getActivity() as PlayActivity
+                    thePlayActivity.onWin(seconds,matchAttempts,matches)
                 }
             } else {
                 val handler = Handler()
@@ -233,4 +241,18 @@ class GameFragment : Fragment() {
         )
         msg.show()
     }
+
+
+    private fun byteToBitmap(theBytes: ByteArray): Bitmap {
+        return BitmapFactory.decodeByteArray(theBytes,0,theBytes.size)
+    }
+
+
+    public fun addFromBitmapList(theList: ArrayList<ByteArray>) {
+        for (each in theList) {
+            imgBitmaps.add(byteToBitmap(each))
+        }
+        afterFinishDownload()
+    }
+
 }

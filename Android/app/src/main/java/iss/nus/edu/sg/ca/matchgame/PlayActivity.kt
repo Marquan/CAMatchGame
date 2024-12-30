@@ -40,7 +40,18 @@ class PlayActivity : AppCompatActivity() {
         val fm: FragmentManager = getSupportFragmentManager()
 
         theGame = fm.findFragmentById(R.id.for_game) as GameFragment?
-        theGame?.downloadBeforeStart()
+
+        Log.e("PlayActivity","Unpacking intent")
+        var intent = getIntent()
+        var chosenBitmaps = intent.getSerializableExtra("bitmaps") as ArrayList<ByteArray>
+        if (chosenBitmaps.size < 6) {
+            Log.e("PlayActivity","Downloading before start")
+            theGame?.downloadBeforeStart()
+        } else {
+            Log.e("PlayActivity","Adding from Bitmap")
+            theGame?.addFromBitmapList(chosenBitmaps)
+        }
+        //theGame?.downloadBeforeStart()
     }
 
     private fun makeToast(text: String) {
@@ -50,4 +61,10 @@ class PlayActivity : AppCompatActivity() {
         )
         msg.show()
     }
+
+
+    public fun onWin(time_taken: Int, match_attempts: Int, matches: Int) {
+        makeToast("You Win!")
+    }
+
 }
