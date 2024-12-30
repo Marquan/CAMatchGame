@@ -17,9 +17,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CAMatchGame"
         tools:targetApi="31" >
-        <activity
-            android:name=".FetchActivity"
-            android:exported="false" />
         <!-- Added network security config -->
 
         <!-- AdMob App Test ID -->
@@ -34,7 +31,7 @@
             android:exported="false"
             tools:replace="android:authorities" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".FetchActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
