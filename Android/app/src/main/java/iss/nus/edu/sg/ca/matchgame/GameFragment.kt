@@ -134,8 +134,6 @@ class GameFragment : Fragment() {
             getActivity()?.startService(intent)
         }
     }
-
-
     fun flipCard(index: Int) {
 
         if (isCleared[index]){
