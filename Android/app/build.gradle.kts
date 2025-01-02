@@ -44,6 +44,8 @@ android {
 
 dependencies {
 
+    // AdMob SDK for displaying ads
+    implementation("com.google.android.gms:play-services-ads:21.0.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

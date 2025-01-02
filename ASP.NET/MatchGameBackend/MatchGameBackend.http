@@ -1,0 +1,8 @@
+POST {{MemoryGameBackend_HostAddress}}/api/Users/Login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "your-username",
+    "password": "your-password"
+}

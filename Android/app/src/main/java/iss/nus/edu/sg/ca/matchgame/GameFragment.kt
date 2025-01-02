@@ -52,7 +52,7 @@ class GameFragment : Fragment() {
                     Log.e("MyReceiver","Bitmap count: ${imgBitmaps.size}")
                     if (imgBitmaps.size >= TestSettings.getImgLinks().size) {
                         Log.e("MyReceiver","All ${TestSettings.getImgLinks().size} image(s) downloaded")
-                        startTheGame()
+                        afterFinishDownload()
                     }
                 //imageView.setImageBitmap(bitmap)
                 } else {
@@ -87,12 +87,13 @@ class GameFragment : Fragment() {
     }
 
 
-    fun startTheGame() {
+    fun afterFinishDownload() {
         binding.apply {
             Log.e("GameFragment","Starting the Game")
             for (i in 0..buttonList.size-1) {
                 isCleared.add(false)
                 val theButton = buttonList[i]
+                theButton.setImageResource(R.drawable.closed_card)
                 theButton.setOnClickListener {
                     flipCard(i)
                 }
@@ -117,6 +118,13 @@ class GameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        //downloadBeforeStart()
+
+        return binding.root
+    }
+
+
+    fun downloadBeforeStart() {
         for (i in 0..TestSettings.getImgLinks().size-1) {
             val url = TestSettings.getImgLink(i)
             val intent = Intent(getActivity(), DownloadService::class.java)
@@ -126,10 +134,7 @@ class GameFragment : Fragment() {
             Log.e("GameFragment","Starting download for ${i}: ${url}")
             getActivity()?.startService(intent)
         }
-
-        return binding.root
     }
-
     fun flipCard(index: Int) {
 
         if (isCleared[index]){
@@ -166,13 +171,24 @@ class GameFragment : Fragment() {
                 binding.matchCount.text = "Matches: ${matches}"
                 if (matches >= TestSettings.getImgLinks().size) {
                     isRunning = false
-                    makeToast("You Win!")
+                    //makeToast("You Win!")
+                    //val intent = Intent()
+                    //intent.setAction("game_won")
+                    //intent.putExtra("time_taken",seconds)
+                    //intent.putExtra("match_attempts",matchAttempts)
+                    //intent.putExtra("matches",matches)
+                    //sendBroadcast(intent)
+                    val thePlayActivity = getActivity() as PlayActivity
+                    thePlayActivity.onWin(seconds,matchAttempts,matches)
                 }
             } else {
                 val handler = Handler()
                 handler.postDelayed(
-                    {whichImage.setImageBitmap(null)
-                    buttonList[chose1].setImageBitmap(null)
+                    {
+                    //whichImage.setImageBitmap(null)
+                    //buttonList[chose1].setImageBitmap(null)
+                    whichImage.setImageResource(R.drawable.closed_card)
+                    buttonList[chose1].setImageResource(R.drawable.closed_card)
                     chose2 = -1
                     chose1 = -1
                     },
@@ -229,4 +245,18 @@ class GameFragment : Fragment() {
         )
         msg.show()
     }
+
+
+    private fun byteToBitmap(theBytes: ByteArray): Bitmap {
+        return BitmapFactory.decodeByteArray(theBytes,0,theBytes.size)
+    }
+
+
+    public fun addFromBitmapList(theList: ArrayList<ByteArray>) {
+        for (each in theList) {
+            imgBitmaps.add(byteToBitmap(each))
+        }
+        afterFinishDownload()
+    }
+
 }

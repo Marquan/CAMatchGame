@@ -18,12 +18,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CAMatchGame"
         tools:targetApi="31" >
+        <!-- Added network security config -->
+
+        <!-- AdMob App Test ID -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3597642165326174~6741922803" />
+
+        <provider
+            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+            android:authorities="com.google.android.gms.ads.provider"
+            android:enabled="true"
+            android:exported="false"
+            tools:replace="android:authorities" />
         <activity
             android:name=".FetchActivity"
-            android:exported="false" />
-        <!-- Added network security config -->
-        <activity
-            android:name=".LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +40,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <service
             android:name=".DownloadService"
             android:enabled="true"
