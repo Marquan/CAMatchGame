@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.FragmentManager
 import com.google.android.gms.ads.MobileAds
+import iss.nus.edu.sg.ca.matchgame.Constants.Constants
 
 class PlayActivity : AppCompatActivity() {
 
@@ -24,18 +25,25 @@ class PlayActivity : AppCompatActivity() {
             insets
         }
 
+        val sharedPrefs = getSharedPreferences(Constants.USER_CREDENTIALS_FILE, MODE_PRIVATE)
+        //var username = sharedPrefs.getString("username",null)
+        val isPaidUser = sharedPrefs.getBoolean("isPaidUser",false)
+
         // Initialize the AdMob SDK
         MobileAds.initialize(this) { initializationStatus ->
             Log.d("MainActivity", "AdMob SDK initialized: $initializationStatus")
 
-            // After initialization is complete, load the AdFragment
-            val adFragment =
-                supportFragmentManager.findFragmentByTag(AdFragment::class.java.simpleName)
-            if (adFragment == null) {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.for_ad, AdFragment())
-                    .commit()
+            if (!isPaidUser) {
+                // After initialization is complete, load the AdFragment
+                val adFragment =
+                    supportFragmentManager.findFragmentByTag(AdFragment::class.java.simpleName)
+                if (adFragment == null) {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.for_ad, AdFragment())
+                        .commit()
+                }
             }
+
         }
         val fm: FragmentManager = getSupportFragmentManager()
 
@@ -65,6 +73,9 @@ class PlayActivity : AppCompatActivity() {
 
     public fun onWin(time_taken: Int, match_attempts: Int, matches: Int) {
         makeToast("You Win!")
+        val sharedPrefs = getSharedPreferences(Constants.USER_CREDENTIALS_FILE, MODE_PRIVATE)
+        var username = sharedPrefs.getString("username",null)
+        //val isPaidUser = sharedPrefs.getBoolean("isPaidUser",false)
     }
 
 }
