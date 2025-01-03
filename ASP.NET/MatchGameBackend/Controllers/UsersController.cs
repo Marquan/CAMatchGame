@@ -3,7 +3,7 @@ using MatchGameBackend.Data;
 using MatchGameBackend.Models;
 using System.Linq;
 using MatchGameBackend.DTO;
-
+using MatchGameBackend.LeaderService;
 namespace MatchGameBackend.Controllers
 {
     [Route("api/[controller]")]
@@ -59,6 +59,24 @@ namespace MatchGameBackend.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(new { Message = "Game time updated successfully", GameTime = user.GameTime });
+        }
+        [Route("leaderboard")]
+
+        public class LeaderboardController : Controller
+        {
+            private readonly LeaderDAO _leaderboardService;
+
+            public LeaderboardController(){
+                _leaderboardService=new LeaderDAO();
+            }
+
+            [HttpGet]
+            public IActionResult Index()
+            {
+                var leaderboard=_leaderboardService.GetTopUsers();
+                return View(leaderboard);
+            }
+
         }
     }
 }
