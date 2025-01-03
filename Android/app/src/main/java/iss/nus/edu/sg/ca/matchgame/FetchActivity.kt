@@ -232,7 +232,6 @@ class FetchActivity : AppCompatActivity() {
 
                 //TODO set up which activity to move next
                 //TODO selected images will be send through intent
-
                 Log.e("FetchActivity","Passing bitmaps to intent")
                 val playIntent = Intent(this, PlayActivity::class.java)
                 playIntent.putExtra("bitmaps",byteArrayList)
