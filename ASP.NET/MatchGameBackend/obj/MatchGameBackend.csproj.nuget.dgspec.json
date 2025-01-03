@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\azril\\source\\repos\\MatchGameBackend\\MatchGameBackend.csproj": {}
+    "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\MatchGameBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\azril\\source\\repos\\MatchGameBackend\\MatchGameBackend.csproj": {
+    "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\MatchGameBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\azril\\source\\repos\\MatchGameBackend\\MatchGameBackend.csproj",
+        "projectUniqueName": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\MatchGameBackend.csproj",
         "projectName": "MatchGameBackend",
-        "projectPath": "C:\\Users\\azril\\source\\repos\\MatchGameBackend\\MatchGameBackend.csproj",
-        "packagesPath": "C:\\Users\\azril\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\azril\\source\\repos\\MatchGameBackend\\obj\\",
+        "projectPath": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\MatchGameBackend.csproj",
+        "packagesPath": "C:\\Users\\TheMarksman\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\azril\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\TheMarksman\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -59,6 +59,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.7, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.1.0, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",

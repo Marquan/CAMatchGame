@@ -84,3 +84,16 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2024-12-30 20:13:49
+
+
+-- Added on 2025-01-03 13:38
+DROP TABLE IF EXISTS `scores`;
+CREATE TABLE `scores` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `UserId` int NOT NULL,
+  `TimeTaken` int NOT NULL,
+  `MatchAttempts` int NOT NULL,
+  `Matches` int NOT NULL,
+  PRIMARY KEY (`Id`),
+  FOREIGN KEY (`UserId`) REFERENCES users(`UserId`)
+)
