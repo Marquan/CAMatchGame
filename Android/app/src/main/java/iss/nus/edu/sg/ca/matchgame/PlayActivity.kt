@@ -76,6 +76,7 @@ class PlayActivity : AppCompatActivity() {
         val sharedPrefs = getSharedPreferences(Constants.USER_CREDENTIALS_FILE, MODE_PRIVATE)
         var username = sharedPrefs.getString("username",null)
         //val isPaidUser = sharedPrefs.getBoolean("isPaidUser",false)
+
     }
 
 }
