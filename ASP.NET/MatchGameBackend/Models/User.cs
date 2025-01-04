@@ -21,5 +21,9 @@ namespace MatchGameBackend.Models
         //New field to store elapsed time for game fragment
 
         public int GameTime { get; set; }
+
+        //Navigation
+        public virtual ICollection<Game> Games { get; set; } = new List<Game>();
+
     }
 }

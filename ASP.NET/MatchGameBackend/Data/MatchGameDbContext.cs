@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MatchGameBackend.Models;
-using Microsoft.AspNetCore.Mvc;
-using MatchGameBackend.Data;
+
 
 namespace MatchGameBackend.Data
 {

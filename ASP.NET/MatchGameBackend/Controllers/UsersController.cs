@@ -3,16 +3,16 @@ using MatchGameBackend.Data;
 using MatchGameBackend.Models;
 using System.Linq;
 using MatchGameBackend.DTO;
-using MatchGameBackend.LeaderService;
+using Microsoft.EntityFrameworkCore;
 namespace MatchGameBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly MatchGameDbContext _context;
 
-        public UsersController(ApplicationDbContext context)
+        public UsersController(MatchGameDbContext context)
         {
             _context = context;
         }
@@ -46,6 +46,14 @@ namespace MatchGameBackend.Controllers
             }
         }
 
+        [HttpGet("GetUser")]
+        public IActionResult GetUser(string username)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Username == username);
+            if (user == null) return NotFound();
+            return Ok(user);
+        }
+
         [HttpPut("update-timer")]
         public async Task<IActionResult> UpdateTimer([FromBody] UpdateTimerRequest request)
         {
@@ -59,24 +67,6 @@ namespace MatchGameBackend.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(new { Message = "Game time updated successfully", GameTime = user.GameTime });
-        }
-        [Route("leaderboard")]
-
-        public class LeaderboardController : Controller
-        {
-            private readonly LeaderDAO _leaderboardService;
-
-            public LeaderboardController(){
-                _leaderboardService=new LeaderDAO();
-            }
-
-            [HttpGet]
-            public IActionResult Index()
-            {
-                var leaderboard=_leaderboardService.GetTopUsers();
-                return View(leaderboard);
-            }
-
         }
     }
 }
