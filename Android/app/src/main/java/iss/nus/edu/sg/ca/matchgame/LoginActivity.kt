@@ -4,7 +4,10 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import iss.nus.edu.sg.ca.matchgame.Constants.Constants
 import iss.nus.edu.sg.ca.matchgame.data.models.LoginRequest
 import iss.nus.edu.sg.ca.matchgame.databinding.ActivityLoginBinding
@@ -20,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        enableEdgeToEdge()
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

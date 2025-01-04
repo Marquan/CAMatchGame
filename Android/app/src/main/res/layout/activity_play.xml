@@ -14,7 +14,7 @@
         android:id="@+id/for_game"
         android:name="iss.nus.edu.sg.ca.matchgame.GameFragment"
         android:layout_width="match_parent"
-        android:layout_height="649dp"
+        android:layout_height="0dp"
         android:layout_weight="20"
         tools:context=".PlayActivity" />
 
@@ -22,8 +22,8 @@
     android:id="@+id/for_ad"
     android:layout_width="match_parent"
     android:layout_height="47dp"
-    android:layout_gravity="bottom"
     android:layout_marginBottom="16dp"
-    android:layout_weight="1" />
+        android:layout_weight="1"/>
+
 
 </LinearLayout>
