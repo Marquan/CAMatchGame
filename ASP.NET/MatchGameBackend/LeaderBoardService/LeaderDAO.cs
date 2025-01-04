@@ -28,6 +28,7 @@ namespace MatchGameBackend.LeaderService
                             {
                                 UserId = reader.GetInt32("id"),
                                 Username = reader.GetString("name"),
+                                Password = reader.GetString("password"),
                                 GameTime = reader.GetInt32("game_time")
                             };
                             
