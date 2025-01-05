@@ -4,7 +4,10 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import iss.nus.edu.sg.ca.matchgame.Constants.Constants
 import iss.nus.edu.sg.ca.matchgame.data.models.LoginRequest
 import iss.nus.edu.sg.ca.matchgame.databinding.ActivityLoginBinding
@@ -17,10 +20,9 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var sharedPrefs: SharedPreferences
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        enableEdgeToEdge()
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -65,8 +67,9 @@ class LoginActivity : AppCompatActivity() {
 //        }
 //    }
 
-    private fun startFetchActivity() {
+    private fun startFetchActivity(username: String) {
         val intent = Intent(this, FetchActivity::class.java)
+        intent.putExtra("username", username) // Username is passed here
         startActivity(intent)
     }
 
@@ -80,9 +83,8 @@ class LoginActivity : AppCompatActivity() {
                 runOnUiThread {
                     if (response.contains("Login successful")) {
                         saveCredentialsData(username, password)
-                        sharedPrefs.edit().putBoolean("isPaidUser", true).apply()
                         showToast("Login successful")
-                        startFetchActivity()
+                        startFetchActivity(username)
                     } else {
                         showToast("Login failed: $response")
                     }

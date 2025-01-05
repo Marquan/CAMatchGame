@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
 
 
@@ -30,6 +31,28 @@ class AdFragment : Fragment() {
         MobileAds.initialize(requireContext()) { initializationStatus ->
             val adRequest = AdRequest.Builder().build()
             adView.loadAd(adRequest)
+            // Set an AdListener to track ad events
+            adView.adListener = object : com.google.android.gms.ads.AdListener() {
+                override fun onAdLoaded() {
+                    Log.d("AdFragment", "Ad loaded successfully")
+                }
+
+                override fun onAdFailedToLoad(error: LoadAdError) {
+                    Log.e("AdFragment", "Ad failed to load: ${error.message}")
+                }
+
+                override fun onAdOpened() {
+                    Log.d("AdFragment", "Ad opened")
+                }
+
+                override fun onAdClosed() {
+                    Log.d("AdFragment", "Ad closed")
+                }
+
+                override fun onAdClicked() {
+                    Log.d("AdFragment", "Ad clicked")
+                }
+            }
         }
         return view
     }
