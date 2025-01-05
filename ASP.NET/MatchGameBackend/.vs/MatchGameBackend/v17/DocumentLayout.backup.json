@@ -46,8 +46,7 @@
               "RelativeToolTip": "DTO\\UpdateTimerRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T06:27:46.947Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T06:27:46.947Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T06:26:10.793Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T06:26:10.793Z"
             },
             {
               "$type": "Document",
@@ -72,8 +70,7 @@
               "RelativeToolTip": "LeaderBoardService\\LeaderDAO.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwBQAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T04:30:59.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T04:30:59.073Z"
             },
             {
               "$type": "Document",
@@ -85,8 +82,7 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T04:58:02.821Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T04:58:02.821Z"
             },
             {
               "$type": "Document",
@@ -98,8 +94,7 @@
               "RelativeToolTip": "Controllers\\LeaderboardController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T04:43:11.64Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T04:43:11.64Z"
             },
             {
               "$type": "Document",
@@ -109,7 +104,7 @@
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
               "ToolTip": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Controllers\\UsersController.cs",
               "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAqwCwAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwBgAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-05T04:51:10.367Z",
               "EditorCaption": ""
