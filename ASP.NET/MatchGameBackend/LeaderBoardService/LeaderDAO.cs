@@ -17,7 +17,8 @@ namespace MatchGameBackend.LeaderService
                 using (MySqlConnection conn = new MySqlConnection(CONNECTION_STRING))
                 {
                     conn.Open();
-                    string query = "SELECT id, name, game_time FROM users ORDER BY game_time ASC";
+                    //string query = "SELECT id, name, game_time FROM users ORDER BY game_time ASC";
+                    string query = "SELECT userid, username, gametime FROM users ORDER BY gametime ASC";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -26,10 +27,11 @@ namespace MatchGameBackend.LeaderService
                         {
                             User user = new User
                             {
-                                UserId = reader.GetInt32("id"),
-                                Username = reader.GetString("name"),
-                                Password = reader.GetString("password"),
-                                GameTime = reader.GetInt32("game_time")
+                                UserId = reader.GetInt32("userid"),
+                                Username = reader.GetString("username"),
+                                Password = "",
+                                //Password = reader.GetString("password"),
+                                GameTime = reader.GetInt32("gametime")
                             };
                             
                             users.Add(user);

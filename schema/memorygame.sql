@@ -109,6 +109,8 @@ CREATE TABLE `scores` (
     FOREIGN KEY (`UserId`) REFERENCES users(`UserId`)
 );
 
+INSERT INTO `scores` VALUES ('aaa',5,0), ('bbb',5,1), ('ccc',5,2);
+
 DROP TABLE IF EXISTS `games`;
 CREATE TABLE `games` (
 	`GameId` varchar(150) NOT NULL,

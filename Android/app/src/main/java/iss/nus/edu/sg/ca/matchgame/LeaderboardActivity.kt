@@ -18,7 +18,9 @@ class LeaderboardActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d("LeaderboardActivity", "onCreate Start")
         super.onCreate(savedInstanceState)
+        Log.d("LeaderboardActivity", "set content view")
         setContentView(R.layout.activity_leaderboard)
 
         recyclerView = findViewById(R.id.recyclerView)
@@ -30,11 +32,12 @@ class LeaderboardActivity : AppCompatActivity() {
     }
 
     private fun fetchLeaderboardData() {
-        val username = intent.getStringExtra("username") ?: "Guest"
+        val currentusername = intent.getStringExtra("username") ?: "Guest"
         val timeTaken = intent.getIntExtra("timeTaken", 86400) // 86400s is 24h
-        Log.d("LeaderboardActivity", "$username Time: $timeTaken")
+        Log.d("LeaderboardActivity", "$currentusername Time: $timeTaken")
 
         // Perform the GET request to fetch leaderboard data
+        Log.d("LeaderboardActivity", "Connecting to TopUsers")
         val url = "http://10.0.2.2:5126/api/Leaderboard/TopUsers"
         val connection = URL(url).openConnection() as HttpURLConnection
         connection.requestMethod = "GET"

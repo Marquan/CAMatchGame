@@ -108,6 +108,7 @@ class PlayActivity : AppCompatActivity() {
                 makeToast("Redirecting to Leaderboard...")
                 //finish()
 
+                Log.d("PlayActivity", "About to start leaderboard")
                 val intent = Intent(this, LeaderboardActivity::class.java)
                 intent.putExtra("username", username)
                 intent.putExtra("timeTaken", timeTaken)

@@ -1,4 +1,5 @@
 ﻿using MatchGameBackend.LeaderService;
+using MatchGameBackend.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MatchGameBackend.Controllers
@@ -18,6 +19,12 @@ namespace MatchGameBackend.Controllers
         {
             var leaderboard = _leaderboardService.GetTopUsers();
             return View(leaderboard);
+        }
+
+        [HttpGet("TopUsers")]
+        public IActionResult TopUsers() {
+            var leaderboard = _leaderboardService.GetTopUsers();
+            return Ok(leaderboard);
         }
     }
 }
