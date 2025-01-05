@@ -102,6 +102,8 @@ class FetchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_fetch)
+        val username = intent.getStringExtra("username") ?: "Guest"
+        val userId = intent.getIntExtra("userId",-1)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -232,9 +234,13 @@ class FetchActivity : AppCompatActivity() {
 
                 //TODO set up which activity to move next
                 //TODO selected images will be send through intent
-
-                Log.e("FetchActivity","Passing bitmaps to intent")
+                Log.e("FetchActivity","Creating Play Activity intent")
                 val playIntent = Intent(this, PlayActivity::class.java)
+                Log.e("FetchActivity","Passing username $username to intent")
+                playIntent.putExtra("username", username)
+                Log.e("FetchActivity","Passing userId $userId to intent")
+                playIntent.putExtra("userId", userId)
+                Log.e("FetchActivity","Passing bitmaps to intent")
                 playIntent.putExtra("bitmaps",byteArrayList)
                 Log.e("FetchActivity","Starting Play Activity")
                 startActivity(playIntent)

@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DTO",
+    "\\LeaderBoardService",
+    "\\Models",
+    "\\Properties"
   ],
+  "SelectedNode": "\\Models\\Score.cs",
   "PreviewInSolutionExplorer": false
 }

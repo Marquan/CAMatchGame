@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,10 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CAMatchGame"
-        tools:targetApi="31" >
-        <!-- Added network security config -->
+        tools:targetApi="31">
 
-        <!-- AdMob App Test ID -->
+        <!-- AdMob App Test ID (if needed) -->
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3597642165326174~6741922803" />
@@ -30,29 +30,35 @@
             android:enabled="true"
             android:exported="false"
             tools:replace="android:authorities" />
+
         <activity
-            android:name=".FetchActivity"
-            android:exported="true" >
+            android:name=".LeaderboardActivity"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".FetchActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".PlayActivity"
+            android:exported="true" />
+        -->
+
         <service
             android:name=".DownloadService"
             android:enabled="true"
             android:exported="false" />
 
-        <activity
-            android:name=".PlayActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
