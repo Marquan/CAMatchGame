@@ -46,19 +46,22 @@ class LeaderboardActivity : AppCompatActivity() {
         conn.requestMethod = "PUT"
         conn.setRequestProperty("Content-Type", "application/json")
 
-        val jsonInputString = "{\"UserId\": \"${userId}\", \"updateTime\": \"${timeTaken}\"}"
+        val jsonInputString = "{\"UserId\": ${userId}, \"GameTime\": ${timeTaken}}"
         try {
             val out = OutputStreamWriter(conn.outputStream)
             out.write(jsonInputString)
             out.flush()
             out.close()
-
+            Log.d("LeaderboardActivity", "Response Code: ${conn.responseCode}")
             if (conn.responseCode == HttpURLConnection.HTTP_NOT_FOUND) {
                 showToast("Could not update: User with Id '$userId' was not found")
             } else if (conn.responseCode == HttpURLConnection.HTTP_OK) {
                 showToast("User with Id '$userId' score updated successfully")
+            } else {
+                showToast("Error: ${conn.responseCode}")
             }
         } catch (e: Exception) {
+            Log.d("LeaderboardActivity", "Error when updating scores: ${e.localizedMessage}")
             showToast("Error when updating scores: ${e.localizedMessage}")
         }
         //val connection = URL(url).openConnection() as HttpURLConnection
