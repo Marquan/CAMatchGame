@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "LeaderBoardService\\LeaderDAO.cs",
               "ToolTip": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\LeaderBoardService\\LeaderDAO.cs",
               "RelativeToolTip": "LeaderBoardService\\LeaderDAO.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBQAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBQAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-05T04:30:59.073Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T04:58:02.821Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T04:58:02.821Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Controllers\\LeaderboardController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T04:43:11.64Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T04:43:11.64Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "Controllers\\UsersController.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAAADgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T04:51:10.367Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T04:51:10.367Z"
             }
           ]
         }

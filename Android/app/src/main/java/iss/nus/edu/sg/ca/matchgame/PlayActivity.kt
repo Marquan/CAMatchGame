@@ -25,6 +25,8 @@ class PlayActivity : AppCompatActivity() {
 
         val sharedPrefs = getSharedPreferences(Constants.USER_CREDENTIALS_FILE, MODE_PRIVATE)
         val username = intent.getStringExtra("username") ?: "Guest"
+        Log.d("PlayActivity", "Username is $username")
+        this.username = username
         fetchUserIsPaidStatus(username)
         Log.d("PlayActivity", "isPaidUser: $isPaidUser")
 
@@ -108,12 +110,13 @@ class PlayActivity : AppCompatActivity() {
                 makeToast("Redirecting to Leaderboard...")
                 //finish()
 
-                Log.d("PlayActivity", "About to start leaderboard")
+                Log.d("PlayActivity", "Passing bitmaps to intent")
                 val intent = Intent(this, LeaderboardActivity::class.java)
                 intent.putExtra("username", username)
                 intent.putExtra("timeTaken", timeTaken)
                 intent.putExtra("matchAttempts", matchAttempts)
                 intent.putExtra("matches", matches)
+                Log.d("PlayActivity", "Starting Leaderboard Activity")
                 startActivity(intent)
             }, 3000) // 3000ms = 3 seconds
         }
