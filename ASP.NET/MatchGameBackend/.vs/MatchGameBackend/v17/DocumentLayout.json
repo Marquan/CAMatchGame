@@ -1,50 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\",
+  "WorkspaceRootPath": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\azril\\githubrepo\\camatchgame\\asp.net\\matchgamebackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\azril\\githubrepo\\camatchgame\\asp.net\\matchgamebackend\\models\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:models\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\azril\\githubrepo\\camatchgame\\asp.net\\matchgamebackend\\models\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:models\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\azril\\githubrepo\\camatchgame\\asp.net\\matchgamebackend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\themarksman\\androidstudioprojects\\camatchgame\\asp.net\\matchgamebackend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\azril\\githubrepo\\camatchgame\\asp.net\\matchgamebackend\\leaderboardservice\\leaderdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\themarksman\\androidstudioprojects\\camatchgame\\asp.net\\matchgamebackend\\leaderboardservice\\leaderdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:leaderboardservice\\leaderdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\azril\\githubrepo\\camatchgame\\asp.net\\matchgamebackend\\controllers\\leaderboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\themarksman\\androidstudioprojects\\camatchgame\\asp.net\\matchgamebackend\\controllers\\leaderboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:controllers\\leaderboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\azril\\githubrepo\\camatchgame\\asp.net\\matchgamebackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\azril\\githubrepo\\camatchgame\\asp.net\\matchgamebackend\\data\\matchgamedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:data\\matchgamedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\azril\\githubrepo\\camatchgame\\asp.net\\matchgamebackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\azril\\githubrepo\\camatchgame\\asp.net\\matchgamebackend\\matchgamebackend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:matchgamebackend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\azril\\githubrepo\\camatchgame\\asp.net\\matchgamebackend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,146 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T11:13:25.615Z",
+              "WhenOpened": "2025-01-05T04:51:10.367Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Score.cs",
-              "DocumentMoniker": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Models\\Score.cs",
-              "RelativeDocumentMoniker": "Models\\Score.cs",
-              "ToolTip": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Models\\Score.cs",
-              "RelativeToolTip": "Models\\Score.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAgwBgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T11:44:04.662Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LeaderboardController.cs",
-              "DocumentMoniker": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Controllers\\LeaderboardController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LeaderboardController.cs",
-              "ToolTip": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Controllers\\LeaderboardController.cs",
-              "RelativeToolTip": "Controllers\\LeaderboardController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T11:34:54.612Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "LeaderDAO.cs",
-              "DocumentMoniker": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\LeaderBoardService\\LeaderDAO.cs",
+              "DocumentMoniker": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\LeaderBoardService\\LeaderDAO.cs",
               "RelativeDocumentMoniker": "LeaderBoardService\\LeaderDAO.cs",
-              "ToolTip": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\LeaderBoardService\\LeaderDAO.cs",
+              "ToolTip": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\LeaderBoardService\\LeaderDAO.cs",
               "RelativeToolTip": "LeaderBoardService\\LeaderDAO.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAIwBwAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T11:45:52.492Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAwwEgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T11:13:18.623Z",
+              "WhenOpened": "2025-01-05T04:30:59.073Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Game.cs",
-              "DocumentMoniker": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Models\\Game.cs",
-              "RelativeDocumentMoniker": "Models\\Game.cs",
-              "ToolTip": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Models\\Game.cs",
-              "RelativeToolTip": "Models\\Game.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAgwBcAAAAAAAAAAAAAAA==",
+              "Title": "LeaderboardController.cs",
+              "DocumentMoniker": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Controllers\\LeaderboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LeaderboardController.cs",
+              "ToolTip": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Controllers\\LeaderboardController.cs",
+              "RelativeToolTip": "Controllers\\LeaderboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T11:32:24.1Z",
+              "WhenOpened": "2025-01-05T04:43:11.64Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAmwB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T05:47:52.151Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MatchGameDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Data\\MatchGameDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\MatchGameDbContext.cs",
-              "ToolTip": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Data\\MatchGameDbContext.cs",
-              "RelativeToolTip": "Data\\MatchGameDbContext.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowAoAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T11:32:37.312Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-03T05:22:23.865Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MatchGameBackend.http",
-              "DocumentMoniker": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\MatchGameBackend.http",
-              "RelativeDocumentMoniker": "MatchGameBackend.http",
-              "ToolTip": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\MatchGameBackend.http",
-              "RelativeToolTip": "MatchGameBackend.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-01-03T11:36:34.472Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\azril\\GitHubRepo\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T05:47:36.089Z"
             }
           ]
         }

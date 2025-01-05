@@ -31,6 +31,8 @@ class LeaderboardActivity : AppCompatActivity() {
 
     private fun fetchLeaderboardData() {
         val username = intent.getStringExtra("username") ?: "Guest"
+        val timeTaken = intent.getIntExtra("timeTaken", 86400) // 86400s is 24h
+        Log.d("LeaderboardActivity", "$username Time: $timeTaken")
 
         // Perform the GET request to fetch leaderboard data
         val url = "http://10.0.2.2:5126/api/Leaderboard/TopUsers"

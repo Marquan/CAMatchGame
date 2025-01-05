@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MatchGameBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+150801ff47aee5a36cb1f8200dd04fb722e97b0c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd8b38ae0497a6f70ee7df3b428cd8a2604b0956")]
 [assembly: System.Reflection.AssemblyProductAttribute("MatchGameBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MatchGameBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

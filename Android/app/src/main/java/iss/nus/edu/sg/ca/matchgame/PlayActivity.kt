@@ -106,7 +106,7 @@ class PlayActivity : AppCompatActivity() {
             val handler = android.os.Handler()
             handler.postDelayed({
                 makeToast("Redirecting to Leaderboard...")
-                finish()
+                //finish()
 
                 val intent = Intent(this, LeaderboardActivity::class.java)
                 intent.putExtra("username", username)
