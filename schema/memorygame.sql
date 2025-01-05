@@ -87,13 +87,37 @@ UNLOCK TABLES;
 
 
 -- Added on 2025-01-03 13:38
+-- DROP TABLE IF EXISTS `scores`;
+-- CREATE TABLE `scores` (
+--   `Id` int NOT NULL AUTO_INCREMENT,scores
+--   `UserId` int NOT NULL,
+--   `TimeTaken` int NOT NULL,
+--   `MatchAttempts` int NOT NULL,
+--   `Matches` int NOT NULL,
+--   PRIMARY KEY (`Id`),
+--   FOREIGN KEY (`UserId`) REFERENCES users(`UserId`)
+-- )
+
+-- Added on 2025-01-05 12:32
 DROP TABLE IF EXISTS `scores`;
 CREATE TABLE `scores` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `UserId` int NOT NULL,
-  `TimeTaken` int NOT NULL,
-  `MatchAttempts` int NOT NULL,
-  `Matches` int NOT NULL,
-  PRIMARY KEY (`Id`),
-  FOREIGN KEY (`UserId`) REFERENCES users(`UserId`)
-)
+	`ScoreId` varchar(150) NOT NULL,
+    `Points` int NOT NULL,
+    `UserId` int NOT NULL,
+    
+    PRIMARY KEY (`ScoreId`),
+    FOREIGN KEY (`UserId`) REFERENCES users(`UserId`)
+);
+
+INSERT INTO `scores` VALUES ('bbb',5,1), ('ccc',5,2);
+
+DROP TABLE IF EXISTS `games`;
+CREATE TABLE `games` (
+	`GameId` varchar(150) NOT NULL,
+    `Duration` int NOT NULL,
+    `UserId` int NOT NULL,
+    
+    PRIMARY KEY (`GameId`),
+    FOREIGN KEY (`UserId`) REFERENCES users(`UserId`)
+);
+

@@ -214,3 +214,5 @@ C:\Users\azril\GitHubRepo\CAMatchGame\ASP.NET\MatchGameBackend\obj\Debug\net8.0\
 C:\Users\azril\GitHubRepo\CAMatchGame\ASP.NET\MatchGameBackend\obj\Debug\net8.0\MatchGameBackend.pdb
 C:\Users\azril\GitHubRepo\CAMatchGame\ASP.NET\MatchGameBackend\obj\Debug\net8.0\MatchGameBackend.genruntimeconfig.cache
 C:\Users\azril\GitHubRepo\CAMatchGame\ASP.NET\MatchGameBackend\obj\Debug\net8.0\ref\MatchGameBackend.dll
+C:\Users\TheMarksman\AndroidStudioProjects\CAMatchGame\ASP.NET\MatchGameBackend\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\TheMarksman\AndroidStudioProjects\CAMatchGame\ASP.NET\MatchGameBackend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll

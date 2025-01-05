@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DTO"
+    "\\DTO",
+    "\\LeaderBoardService",
+    "\\Models",
+    "\\Properties"
   ],
-  "SelectedNode": "\\MatchGameBackend.sln",
+  "SelectedNode": "\\Models\\Score.cs",
   "PreviewInSolutionExplorer": false
 }

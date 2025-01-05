@@ -16,6 +16,7 @@ class PlayActivity : AppCompatActivity() {
 
     private var theGame: GameFragment? = null
     private lateinit var username: String
+    private var userId: Int = -1
     private var isPaidUser: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +26,9 @@ class PlayActivity : AppCompatActivity() {
 
         val sharedPrefs = getSharedPreferences(Constants.USER_CREDENTIALS_FILE, MODE_PRIVATE)
         val username = intent.getStringExtra("username") ?: "Guest"
+        Log.d("PlayActivity", "Username is $username")
+        this.username = username
+        userId = intent.getIntExtra("userId",-1)
         fetchUserIsPaidStatus(username)
         Log.d("PlayActivity", "isPaidUser: $isPaidUser")
 
@@ -106,13 +110,16 @@ class PlayActivity : AppCompatActivity() {
             val handler = android.os.Handler()
             handler.postDelayed({
                 makeToast("Redirecting to Leaderboard...")
-                finish()
+                //finish()
 
+                Log.d("PlayActivity", "Passing bitmaps to intent")
                 val intent = Intent(this, LeaderboardActivity::class.java)
                 intent.putExtra("username", username)
+                intent.putExtra("userId",userId)
                 intent.putExtra("timeTaken", timeTaken)
                 intent.putExtra("matchAttempts", matchAttempts)
                 intent.putExtra("matches", matches)
+                Log.d("PlayActivity", "Starting Leaderboard Activity")
                 startActivity(intent)
             }, 3000) // 3000ms = 3 seconds
         }
