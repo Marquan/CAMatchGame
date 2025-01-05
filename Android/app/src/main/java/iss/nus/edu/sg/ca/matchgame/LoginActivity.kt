@@ -20,7 +20,6 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var sharedPrefs: SharedPreferences
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -68,8 +67,9 @@ class LoginActivity : AppCompatActivity() {
 //        }
 //    }
 
-    private fun startFetchActivity() {
+    private fun startFetchActivity(username: String) {
         val intent = Intent(this, FetchActivity::class.java)
+        intent.putExtra("username", username) // Username is passed here
         startActivity(intent)
     }
 
@@ -83,9 +83,8 @@ class LoginActivity : AppCompatActivity() {
                 runOnUiThread {
                     if (response.contains("Login successful")) {
                         saveCredentialsData(username, password)
-                        sharedPrefs.edit().putBoolean("isPaidUser", true).apply()
                         showToast("Login successful")
-                        startFetchActivity()
+                        startFetchActivity(username)
                     } else {
                         showToast("Login failed: $response")
                     }

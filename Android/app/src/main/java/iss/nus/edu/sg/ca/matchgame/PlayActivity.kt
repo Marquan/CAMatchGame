@@ -1,5 +1,6 @@
 package iss.nus.edu.sg.ca.matchgame
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -7,10 +8,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.google.android.gms.ads.MobileAds
 import iss.nus.edu.sg.ca.matchgame.Constants.Constants
+import org.json.JSONObject
+import java.net.HttpURLConnection
+import java.net.URL
 
 class PlayActivity : AppCompatActivity() {
 
     private var theGame: GameFragment? = null
+    private lateinit var username: String
+    private var isPaidUser: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,14 +24,16 @@ class PlayActivity : AppCompatActivity() {
         setContentView(R.layout.activity_play)
 
         val sharedPrefs = getSharedPreferences(Constants.USER_CREDENTIALS_FILE, MODE_PRIVATE)
-        val isPaidUser = getUserIsPaidStatus()
+        val username = intent.getStringExtra("username") ?: "Guest"
+        fetchUserIsPaidStatus(username)
         Log.d("PlayActivity", "isPaidUser: $isPaidUser")
 
+        if (isPaidUser) {
+            makeToast("Enjoy your ad-free experience!")
+        }
 
-        if (!isPaidUser) {
+        else {
             initializeAdMobAndLoadAdFragment()
-        } else {
-            Log.d("PlayActivity", "User is a paid user, no ads displayed.")
         }
 
         val fm: FragmentManager = getSupportFragmentManager()
@@ -43,13 +51,30 @@ class PlayActivity : AppCompatActivity() {
                 theGame?.addFromBitmapList(chosenBitmaps)
             }
             //theGame?.downloadBeforeStart()
-        }
+    }
+        private fun fetchUserIsPaidStatus(username: String) {
+            val url = URL("http://10.0.2.2:5126/api/Users/GetUser?username=$username")
+            val connection = url.openConnection() as HttpURLConnection
+            connection.requestMethod = "GET"
+            connection.setRequestProperty("Content-Type", "application/json")
 
-        private fun getUserIsPaidStatus(): Boolean {
-            val sharedPrefs = getSharedPreferences(Constants.USER_CREDENTIALS_FILE, MODE_PRIVATE)
-            return sharedPrefs.getBoolean("isPaidUser", false)
-        }
+            try {
+                connection.connect()
 
+                if (connection.responseCode == HttpURLConnection.HTTP_OK) {
+                    val response = connection.inputStream.bufferedReader().readText()
+                    val responseObject = JSONObject(response)
+                    isPaidUser = responseObject.getBoolean("isPaidUser")
+                    Log.d("PlayActivity", "isPaidUser: $isPaidUser")
+                } else {
+                    Log.e("PlayActivity", "Error: ${connection.responseCode}")
+                }
+            } catch (e: Exception) {
+                Log.e("PlayActivity", "Network error: ${e.localizedMessage}")
+            } finally {
+                connection.disconnect()
+            }
+        }
 
         private fun initializeAdMobAndLoadAdFragment() {
             MobileAds.initialize(this) { initializationStatus ->
@@ -76,13 +101,20 @@ class PlayActivity : AppCompatActivity() {
             msg.show()
         }
 
-        public fun onWin(time_taken: Int, match_attempts: Int, matches: Int) {
+        public fun onWin(timeTaken: Int, matchAttempts: Int, matches: Int) {
             makeToast("You Win!")
-            val isPaidUser = getUserIsPaidStatus()
+            val handler = android.os.Handler()
+            handler.postDelayed({
+                makeToast("Redirecting to Leaderboard...")
+                finish()
 
-            if (!isPaidUser) {
-                makeToast("Enjoy your ad-free experience!")
-            }
+                val intent = Intent(this, LeaderboardActivity::class.java)
+                intent.putExtra("username", username)
+                intent.putExtra("timeTaken", timeTaken)
+                intent.putExtra("matchAttempts", matchAttempts)
+                intent.putExtra("matches", matches)
+                startActivity(intent)
+            }, 3000) // 3000ms = 3 seconds
         }
     }
 
