@@ -16,6 +16,7 @@ class PlayActivity : AppCompatActivity() {
 
     private var theGame: GameFragment? = null
     private lateinit var username: String
+    private var userId: Int = -1
     private var isPaidUser: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,7 @@ class PlayActivity : AppCompatActivity() {
         val username = intent.getStringExtra("username") ?: "Guest"
         Log.d("PlayActivity", "Username is $username")
         this.username = username
+        userId = intent.getIntExtra("userId",-1)
         fetchUserIsPaidStatus(username)
         Log.d("PlayActivity", "isPaidUser: $isPaidUser")
 
@@ -113,6 +115,7 @@ class PlayActivity : AppCompatActivity() {
                 Log.d("PlayActivity", "Passing bitmaps to intent")
                 val intent = Intent(this, LeaderboardActivity::class.java)
                 intent.putExtra("username", username)
+                intent.putExtra("userId",userId)
                 intent.putExtra("timeTaken", timeTaken)
                 intent.putExtra("matchAttempts", matchAttempts)
                 intent.putExtra("matches", matches)

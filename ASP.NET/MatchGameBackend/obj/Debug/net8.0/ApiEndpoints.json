@@ -34,7 +34,7 @@
   {
     "ContainingType": "MatchGameBackend.Controllers.UsersController",
     "Method": "UpdateTimer",
-    "RelativePath": "api/Users/update-timer",
+    "RelativePath": "api/Users/UpdateTime",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

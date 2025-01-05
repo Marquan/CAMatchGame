@@ -41,7 +41,8 @@ namespace MatchGameBackend.Controllers
                 return Ok(new
                 {
                     status = true,
-                    message = "Login successful"
+                    message = "Login successful",
+                    userId = user.UserId
                 });
             }
         }
@@ -54,7 +55,8 @@ namespace MatchGameBackend.Controllers
             return Ok(user);
         }
 
-        [HttpPut("update-timer")]
+        //[HttpPut("update-timer")]
+        [HttpPut("UpdateTime")]
         public async Task<IActionResult> UpdateTimer([FromBody] UpdateTimerRequest request)
         {
             var user = await _context.Users.FindAsync(request.UserId);

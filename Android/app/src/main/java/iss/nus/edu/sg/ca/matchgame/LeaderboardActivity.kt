@@ -2,11 +2,13 @@ package iss.nus.edu.sg.ca.matchgame
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import iss.nus.edu.sg.ca.matchgame.data.models.LeaderboardItem
 import org.json.JSONArray
+import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -31,10 +33,41 @@ class LeaderboardActivity : AppCompatActivity() {
         fetchLeaderboardData()
     }
 
-    private fun fetchLeaderboardData() {
+    private fun assignNewScore() {
         val currentusername = intent.getStringExtra("username") ?: "Guest"
-        val timeTaken = intent.getIntExtra("timeTaken", 86400) // 86400s is 24h
-        Log.d("LeaderboardActivity", "$currentusername Time: $timeTaken")
+        val userId = intent.getIntExtra("userId",-1)
+        val timeTaken = intent.getIntExtra("timeTaken", -1) // 86400s is 24h
+        if (timeTaken == -1) {
+            return
+        }
+        Log.d("LeaderboardActivity", "$userId: $currentusername Time: $timeTaken")
+        val url = URL("http://10.0.2.2:5126/api/Users/UpdateTime")
+        val conn = url.openConnection() as HttpURLConnection
+        conn.requestMethod = "PUT"
+        conn.setRequestProperty("Content-Type", "application/json")
+
+        val jsonInputString = "{\"UserId\": \"${userId}\", \"updateTime\": \"${timeTaken}\"}"
+        try {
+            val out = OutputStreamWriter(conn.outputStream)
+            out.write(jsonInputString)
+            out.flush()
+            out.close()
+
+            if (conn.responseCode == HttpURLConnection.HTTP_NOT_FOUND) {
+                showToast("Could not update: User with Id '$userId' was not found")
+            } else if (conn.responseCode == HttpURLConnection.HTTP_OK) {
+                showToast("User with Id '$userId' score updated successfully")
+            }
+        } catch (e: Exception) {
+            showToast("Error when updating scores: ${e.localizedMessage}")
+        }
+        //val connection = URL(url).openConnection() as HttpURLConnection
+        //connection.requestMethod = "PUT"
+        //connection.setRequestProperty("Content-Type", "application/json")
+    }
+
+    private fun fetchLeaderboardData() {
+        assignNewScore()
 
         // Perform the GET request to fetch leaderboard data
         Log.d("LeaderboardActivity", "Connecting to TopUsers")
@@ -71,6 +104,10 @@ class LeaderboardActivity : AppCompatActivity() {
                 connection.disconnect()
             }
         }.start()
+    }
+
+    private fun showToast (message: String) {
+        Toast.makeText (applicationContext, message, Toast.LENGTH_SHORT).show()
     }
 }
 

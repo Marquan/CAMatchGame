@@ -3,6 +3,7 @@ package iss.nus.edu.sg.ca.matchgame
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,7 @@ import java.net.URL
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var sharedPrefs: SharedPreferences
+    private var userId: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,6 +72,7 @@ class LoginActivity : AppCompatActivity() {
     private fun startFetchActivity(username: String) {
         val intent = Intent(this, FetchActivity::class.java)
         intent.putExtra("username", username) // Username is passed here
+        intent.putExtra("userId",userId)
         startActivity(intent)
     }
 
@@ -118,6 +121,10 @@ class LoginActivity : AppCompatActivity() {
             val responseObject = JSONObject(response)
             val status = responseObject.getBoolean("status")
             val message = responseObject.getString("message")
+            // add the user ID
+            userId = responseObject.getInt("userId")
+            Log.e("LoginActivity","userId: $userId")
+            sharedPrefs.edit().putInt("userId",userId).apply()
 
             return if (status) {
                 "Login successful"

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\themarksman\\androidstudioprojects\\camatchgame\\asp.net\\matchgamebackend\\leaderboardservice\\leaderdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:leaderboardservice\\leaderdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\themarksman\\androidstudioprojects\\camatchgame\\asp.net\\matchgamebackend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\themarksman\\androidstudioprojects\\camatchgame\\asp.net\\matchgamebackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\themarksman\\androidstudioprojects\\camatchgame\\asp.net\\matchgamebackend\\controllers\\leaderboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +17,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\themarksman\\androidstudioprojects\\camatchgame\\asp.net\\matchgamebackend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\themarksman\\androidstudioprojects\\camatchgame\\asp.net\\matchgamebackend\\leaderboardservice\\leaderdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:leaderboardservice\\leaderdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|c:\\users\\themarksman\\androidstudioprojects\\camatchgame\\asp.net\\matchgamebackend\\dto\\updatetimerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EEB3EE7-877E-4B90-B596-7F29D5066D54}|MatchGameBackend.csproj|solutionrelative:dto\\updatetimerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +34,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "UpdateTimerRequest.cs",
+              "DocumentMoniker": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\DTO\\UpdateTimerRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\UpdateTimerRequest.cs",
+              "ToolTip": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\DTO\\UpdateTimerRequest.cs",
+              "RelativeToolTip": "DTO\\UpdateTimerRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T06:27:46.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T06:26:10.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "LeaderDAO.cs",
               "DocumentMoniker": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\LeaderBoardService\\LeaderDAO.cs",
               "RelativeDocumentMoniker": "LeaderBoardService\\LeaderDAO.cs",
               "ToolTip": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\LeaderBoardService\\LeaderDAO.cs",
               "RelativeToolTip": "LeaderBoardService\\LeaderDAO.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBQAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBQAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-05T04:30:59.073Z",
               "EditorCaption": ""
@@ -69,13 +103,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
               "ToolTip": "C:\\Users\\TheMarksman\\AndroidStudioProjects\\CAMatchGame\\ASP.NET\\MatchGameBackend\\Controllers\\UsersController.cs",
               "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAAADgAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAqwCwAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-05T04:51:10.367Z",
               "EditorCaption": ""
