@@ -167,7 +167,8 @@ class FetchActivity : AppCompatActivity() {
                 //reset the progress bar value to 0
                 progressBar.progress = 0
 
-                //make sure imageButton is disabled first
+                //reset images and disable button before finish downloading
+
                 runOnUiThread{
                     adapter.updateEnableButtons(false)
                 }
