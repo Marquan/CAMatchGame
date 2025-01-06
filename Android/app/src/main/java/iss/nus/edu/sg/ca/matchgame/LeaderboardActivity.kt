@@ -14,6 +14,7 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 
+
 class LeaderboardActivity : AppCompatActivity() {
     private lateinit var leaderboardAdapter: LeaderboardAdapter
     private lateinit var recyclerView: RecyclerView

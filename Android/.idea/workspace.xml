@@ -5,149 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8216fbb-2ff9-4125-9bdc-c506bf742199" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.idea/.idea.MatchGameBackend/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.idea/.idea.MatchGameBackend/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.idea/.idea.MatchGameBackend/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.idea/.idea.MatchGameBackend/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.idea/.idea.MatchGameBackend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.idea/.idea.MatchGameBackend/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.vs/MatchGameBackend/FileContentIndex/1c030816-5025-478e-9135-7d8258ba0a2a.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.vs/MatchGameBackend/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.vs/MatchGameBackend/config/applicationhost.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.vs/MatchGameBackend/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.vs/MatchGameBackend/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.vs/MatchGameBackend/v17/DocumentLayout.backup.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.vs/MatchGameBackend/v17/DocumentLayout.backup.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.vs/ProjectSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.vs/ProjectSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.vs/VSWorkspaceState.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/.vs/VSWorkspaceState.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Controllers/LeaderboardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Controllers/LeaderboardController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/DTO/UpdateTimerRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/DTO/UpdateTimerRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Data/MatchGameDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Data/MatchGameDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/LeaderBoardService/LeaderDAO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/LeaderBoardService/LeaderDAO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/MatchGameBackend.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/MatchGameBackend.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/MatchGameBackend.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/MatchGameBackend.csproj.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/MatchGameBackend.http" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/MatchGameBackend.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/MatchGameBackend.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/MatchGameBackend.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Models/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Models/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Models/Score.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Models/Score.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/MatchGameBackend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/MatchGameBackend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/MatchGameBackend.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/MatchGameBackend.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/MatchGameBackend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/MatchGameBackend.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/MemoryGameBackend.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/MemoryGameBackend.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/MemoryGameBackend.runtimeconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/MemoryGameBackend.runtimeconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/MemoryGameBackend.staticwebassets.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/MemoryGameBackend.staticwebassets.endpoints.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/bin/Debug/net8.0/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/ApiEndpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/ApiEndpoints.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/EndpointInfo/MatchGameBackend.OpenApiFiles.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/EndpointInfo/MatchGameBackend.OpenApiFiles.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/EndpointInfo/MatchGameBackend.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/EndpointInfo/MatchGameBackend.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/EndpointInfo/MemoryGameBackend.OpenApiFiles.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/EndpointInfo/MemoryGameBackend.OpenApiFiles.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/EndpointInfo/MemoryGameBackend.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/EndpointInfo/MemoryGameBackend.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MatchGameBackend.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MatchGameBackend.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MatchGameBackend.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MatchGameBackend.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MatchGameBackend.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MatchGameBackend.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MatchGameBackend.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MatchGameBackend.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MatchGameBackend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MatchGameBackend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MatchGameBackend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MatchGameBackend.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MatchGameBackend.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MatchGameBackend.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.GlobalUsings.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.GlobalUsings.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/MemoryGameBackend.genruntimeconfig.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/ref/MatchGameBackend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/ref/MatchGameBackend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/refint/MatchGameBackend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/refint/MatchGameBackend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/staticwebassets.build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/staticwebassets/msbuild.build.MemoryGameBackend.props" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/staticwebassets/msbuild.build.MemoryGameBackend.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.MemoryGameBackend.props" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.MemoryGameBackend.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.MemoryGameBackend.props" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.MemoryGameBackend.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/MatchGameBackend.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/MatchGameBackend.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/MatchGameBackend.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/MatchGameBackend.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/MatchGameBackend.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/MatchGameBackend.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/MemoryGameBackend.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/MemoryGameBackend.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/MemoryGameBackend.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/MemoryGameBackend.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/MemoryGameBackend.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/MemoryGameBackend.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Release/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Release/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Release/net8.0/MatchGameBackend.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Release/net8.0/MatchGameBackend.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Release/net8.0/MatchGameBackend.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Release/net8.0/MatchGameBackend.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Release/net8.0/MatchGameBackend.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Release/net8.0/MatchGameBackend.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Release/net8.0/MatchGameBackend.GlobalUsings.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Release/net8.0/MatchGameBackend.GlobalUsings.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Release/net8.0/MatchGameBackend.RazorAssemblyInfo.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Release/net8.0/MatchGameBackend.RazorAssemblyInfo.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Release/net8.0/MatchGameBackend.RazorAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/Release/net8.0/MatchGameBackend.RazorAssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../ASP.NET/MatchGameBackend/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/iss/nus/edu/sg/ca/matchgame/ExampleInstrumentedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/iss/nus/edu/sg/ca/matchgame/ExampleInstrumentedTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/AdFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/AdFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/Constants/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/Constants/Constants.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/DownloadService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/DownloadService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/FetchActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/FetchActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/GameFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/GameFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/ImageAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/ImageAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/LeaderboardActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/LeaderboardActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/LeaderboardAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/LeaderboardAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/LoginActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/PlayActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/PlayActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/TestSettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/TestSettings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/data/models/LeaderboardItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/data/models/LeaderboardItem.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/data/models/LoginRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/data/models/LoginRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/data/models/LoginResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/data/models/LoginResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_fetch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fetch.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_leaderboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_leaderboard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_play.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_play.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_ad.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_ad.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_game.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/image_card_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/image_card_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_leaderboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_leaderboard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/backup_rules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/iss/nus/edu/sg/ca/matchgame/ExampleUnitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/iss/nus/edu/sg/ca/matchgame/ExampleUnitTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/iss/nus/edu/sg/ca/matchgame/LeaderboardAdapter.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,10 +29,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2rEriEE6Abub2XbzRFM2J85yo0H" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -183,10 +46,15 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "marquan",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="iss.nus.edu.sg.ca.matchgame" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="CA_Match_Game.app.main" />
