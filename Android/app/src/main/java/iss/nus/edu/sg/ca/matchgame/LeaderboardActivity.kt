@@ -1,6 +1,5 @@
 package iss.nus.edu.sg.ca.matchgame
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -34,16 +33,54 @@ class LeaderboardActivity : AppCompatActivity() {
         fetchLeaderboardData()
     }
 
+    private fun assignNewScore() {
+        val currentusername = intent.getStringExtra("username") ?: "Guest"
+        val userId = intent.getIntExtra("userId",-1)
+        val timeTaken = intent.getIntExtra("timeTaken", -1) // 86400s is 24h
+        if (timeTaken == -1) {
+            return
+        }
+        Log.d("LeaderboardActivity", "$userId: $currentusername Time: $timeTaken")
+        val url = URL("http://10.0.2.2:5126/api/Users/UpdateTime")
+        val conn = url.openConnection() as HttpURLConnection
+        conn.requestMethod = "PUT"
+        conn.setRequestProperty("Content-Type", "application/json")
+
+        val jsonInputString = "{\"UserId\": ${userId}, \"GameTime\": ${timeTaken}}"
+        try {
+            val out = OutputStreamWriter(conn.outputStream)
+            out.write(jsonInputString)
+            out.flush()
+            out.close()
+            Log.d("LeaderboardActivity", "Response Code: ${conn.responseCode}")
+            if (conn.responseCode == HttpURLConnection.HTTP_NOT_FOUND) {
+                showToast("Could not update: User with Id '$userId' was not found")
+            } else if (conn.responseCode == HttpURLConnection.HTTP_OK) {
+                showToast("User with Id '$userId' score updated successfully")
+            } else {
+                showToast("Error: ${conn.responseCode}")
+            }
+        } catch (e: Exception) {
+            Log.d("LeaderboardActivity", "Error when updating scores: ${e.localizedMessage}")
+            showToast("Error when updating scores: ${e.localizedMessage}")
+        }
+        //val connection = URL(url).openConnection() as HttpURLConnection
+        //connection.requestMethod = "PUT"
+        //connection.setRequestProperty("Content-Type", "application/json")
+    }
 
     private fun fetchLeaderboardData() {
+        assignNewScore()
+
+        // Perform the GET request to fetch leaderboard data
+        Log.d("LeaderboardActivity", "Connecting to TopUsers")
         val url = "http://10.0.2.2:5126/api/Leaderboard/TopUsers"
+        val connection = URL(url).openConnection() as HttpURLConnection
+        connection.requestMethod = "GET"
+        connection.setRequestProperty("Content-Type", "application/json")
 
         Thread {
-            var connection: HttpURLConnection? = null
             try {
-                connection = URL(url).openConnection() as HttpURLConnection
-                connection.requestMethod = "GET"
-                connection.setRequestProperty("Content-Type", "application/json")
                 connection.connect()
 
                 if (connection.responseCode == HttpURLConnection.HTTP_OK) {
@@ -58,10 +95,8 @@ class LeaderboardActivity : AppCompatActivity() {
                         leaderboardList.add(LeaderboardItem(username, gameTime))
                     }
 
-                    leaderboardList.sortBy { it.gameTime } // 按游戏时间升序排序
-
                     runOnUiThread {
-                        leaderboardAdapter.notifyDataSetChanged() // 刷新 RecyclerView
+                        leaderboardAdapter.notifyDataSetChanged()
                     }
                 } else {
                     Log.e("LeaderboardActivity", "Error: ${connection.responseCode}")
@@ -69,11 +104,10 @@ class LeaderboardActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 Log.e("LeaderboardActivity", "Network error: ${e.localizedMessage}")
             } finally {
-                connection?.disconnect()
+                connection.disconnect()
             }
         }.start()
     }
-
 
     private fun showToast (message: String) {
         Toast.makeText (applicationContext, message, Toast.LENGTH_SHORT).show()
