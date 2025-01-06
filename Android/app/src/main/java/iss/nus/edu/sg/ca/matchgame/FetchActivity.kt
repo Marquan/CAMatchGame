@@ -168,6 +168,7 @@ class FetchActivity : AppCompatActivity() {
                 progressBar.progress = 0
 
                 //reset images and disable button before finish downloading
+
                 runOnUiThread{
                     val tempImg = MutableList(20) {
                         BitmapFactory.decodeResource(resources, R.drawable.card_placeholder)
