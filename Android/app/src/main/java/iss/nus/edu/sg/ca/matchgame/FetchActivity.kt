@@ -167,9 +167,6 @@ class FetchActivity : AppCompatActivity() {
                 //reset the progress bar value to 0
                 progressBar.progress = 0
 
-                //reset images
-                adapter.updateImages(placeholderImages)
-
                 //make sure imageButton is disabled first
                 runOnUiThread{
                     adapter.updateEnableButtons(false)
