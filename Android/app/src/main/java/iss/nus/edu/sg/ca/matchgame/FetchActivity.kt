@@ -167,12 +167,14 @@ class FetchActivity : AppCompatActivity() {
                 //reset the progress bar value to 0
                 progressBar.progress = 0
 
-                //reset images
-                adapter.updateImages(placeholderImages)
+                //reset images and disable button before finish downloading
 
-                //make sure imageButton is disabled first
                 runOnUiThread{
+                    val tempImg = MutableList(20) {
+                        BitmapFactory.decodeResource(resources, R.drawable.card_placeholder)
+                    }
                     adapter.updateEnableButtons(false)
+                    adapter.updateImages(tempImg)
                 }
 
                 //if service is available
