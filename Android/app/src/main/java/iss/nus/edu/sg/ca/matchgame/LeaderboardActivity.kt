@@ -3,6 +3,7 @@ package iss.nus.edu.sg.ca.matchgame
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +13,7 @@ import org.json.JSONArray
 import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.URL
+
 
 
 class LeaderboardActivity : AppCompatActivity() {
@@ -30,6 +32,14 @@ class LeaderboardActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         leaderboardAdapter = LeaderboardAdapter(leaderboardList)
         recyclerView.adapter = leaderboardAdapter
+
+        val playAgainButton = findViewById<Button>(R.id.playAgainBtn)
+        playAgainButton.setOnClickListener() {
+            var response = Intent()
+            setResult(RESULT_OK, response)
+            response.putExtra("to_close", true)
+            finish()
+        }
 
         fetchLeaderboardData()
     }

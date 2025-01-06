@@ -170,11 +170,7 @@ class FetchActivity : AppCompatActivity() {
                 //reset images and disable button before finish downloading
 
                 runOnUiThread{
-                    val tempImg = MutableList(20) {
-                        BitmapFactory.decodeResource(resources, R.drawable.card_placeholder)
-                    }
                     adapter.updateEnableButtons(false)
-                    adapter.updateImages(tempImg)
                 }
 
                 //if service is available

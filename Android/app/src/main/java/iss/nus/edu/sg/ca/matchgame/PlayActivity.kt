@@ -58,7 +58,17 @@ class PlayActivity : AppCompatActivity() {
             Log.e("PlayActivity", "Adding from Bitmap")
             theGame?.addFromBitmapList(chosenBitmaps)
         }
-        //theGame?.downloadBeforeStart()
+
+        launcher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result: ActivityResult ->
+            if (result.resultCode == RESULT_OK) {
+                var to_close = result.data?.getBooleanExtra("to_close",true)
+                if (to_close == true) {
+                    finish()
+                }
+            }
+        }
     }
 
     private fun fetchUserIsPaidStatus(username: String) {
@@ -152,6 +162,7 @@ class PlayActivity : AppCompatActivity() {
                 //finish()
 
                 Log.d("PlayActivity", "Passing bitmaps to intent")
+
                 val intent = Intent(this, LeaderboardActivity::class.java)
                 intent.putExtra("username", username)
                 intent.putExtra("userId", userId)
@@ -159,7 +170,8 @@ class PlayActivity : AppCompatActivity() {
                 intent.putExtra("matchAttempts", matchAttempts)
                 intent.putExtra("matches", matches)
                 Log.d("PlayActivity", "Starting Leaderboard Activity")
-                startActivity(intent)
+                launcher.launch(intent)
+                //startActivity(intent)
             }, 3000) // 3000ms = 3 seconds
         }
     }
