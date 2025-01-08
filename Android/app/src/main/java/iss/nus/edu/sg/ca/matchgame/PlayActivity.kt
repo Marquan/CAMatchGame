@@ -34,15 +34,19 @@ class PlayActivity : AppCompatActivity() {
         Log.d("PlayActivity", "Username is $username")
         this.username = username
         userId = intent.getIntExtra("userId", -1)
-        fetchUserIsPaidStatus(username)
-        Log.d("PlayActivity", "isPaidUser: $isPaidUser")
 
-
-        if (isPaidUser) {
-            makeToast("Enjoy your ad-free experience!")
-        } else {
-            initializeAdMobAndLoadAdFragment()
+        fetchUserIsPaidStatus(username) { isPaid ->
+            runOnUiThread {
+                if (isPaid) {
+                    isPaidUser = true
+                    makeToast("Enjoy your ad-free experience!")
+                } else {
+                    initializeAdMobAndLoadAdFragment()
+                }
+            }
         }
+
+
 
         val fm: FragmentManager = getSupportFragmentManager()
 
@@ -71,28 +75,36 @@ class PlayActivity : AppCompatActivity() {
         }
     }
 
-    private fun fetchUserIsPaidStatus(username: String) {
-        val url = URL("http://10.0.2.2:5126/api/Users/GetUser?username=$username")
-        val connection = url.openConnection() as HttpURLConnection
-        connection.requestMethod = "GET"
-        connection.setRequestProperty("Content-Type", "application/json")
+    private fun fetchUserIsPaidStatus(username: String, callback: (Boolean) -> Unit) {
 
-        try {
-            connection.connect()
+        Thread {
+            val url = URL("http://10.0.2.2:5126/api/Users/GetUser?username=$username")
+            val connection = url.openConnection() as HttpURLConnection
+            connection.requestMethod = "GET"
+            connection.setRequestProperty("Content-Type", "application/json")
 
-            if (connection.responseCode == HttpURLConnection.HTTP_OK) {
-                val response = connection.inputStream.bufferedReader().readText()
-                val responseObject = JSONObject(response)
-                isPaidUser = responseObject.getBoolean("isPaidUser")
-                Log.d("PlayActivity", "isPaidUser: $isPaidUser")
-            } else {
-                Log.e("PlayActivity", "Error: ${connection.responseCode}")
+
+            try {
+                connection.connect()
+
+                if (connection.responseCode == HttpURLConnection.HTTP_OK) {
+                    val response = connection.inputStream.bufferedReader().readText()
+                    val responseObject = JSONObject(response)
+                    isPaidUser = responseObject.getBoolean("isPaidUser")
+                    Log.d("PlayActivity", "isPaidUser: $isPaidUser")
+                    runOnUiThread {
+                        callback(isPaidUser)
+                    }
+                } else {
+                    Log.e("PlayActivity", "Error: ${connection.responseCode}")
+                    callback(false)
+                }
+            } catch (e: Exception) {
+                Log.e("PlayActivity", "Network error: ${e.localizedMessage}")
+            } finally {
+                connection.disconnect()
             }
-        } catch (e: Exception) {
-            Log.e("PlayActivity", "Network error: ${e.localizedMessage}")
-        } finally {
-            connection.disconnect()
-        }
+        }.start()
     }
 
     private fun initializeAdMobAndLoadAdFragment() {
